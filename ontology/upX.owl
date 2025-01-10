@@ -1,0 +1,538 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/spice/SON/upX#"
+     xml:base="https://w3id.org/spice/SON/upX"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#">
+    <owl:Ontology rdf:about="https://w3id.org/spice/SON/upX">
+        <owl:versionIRI rdf:resource="https://w3id.org/spice/SON/upX/0.0.2"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/up#hasAbilityLevel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/up#hasAbilityLevel">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/spice/SON/upX/hasLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/up#hasEducationalLevel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/up#hasEducationalLevel">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/spice/SON/upX/hasLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/up#hasInterestLevel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/up#hasInterestLevel">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/spice/SON/upX/hasLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasEmotion -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasEmotion">
+        <rdfs:domain rdf:resource="https://w3id.org/spice/SON/upX/ExperiencedEmotion"/>
+        <rdfs:range rdf:resource="https://w3id.org/spice/SON/emotion/Emotion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasLevel -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasLevel">
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/up#Level"/>
+        <rdfs:label xml:lang="en">has level</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasMotivation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasMotivation">
+        <rdfs:domain rdf:resource="https://w3id.org/spice/SON/upX/Visit"/>
+        <rdfs:range rdf:resource="https://w3id.org/spice/SON/upX/PersonalVisitMotivation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasPersonalInformation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasPersonalInformation">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasRange -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasRange">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/up#Level"/>
+        <rdfs:range rdf:resource="https://w3id.org/spice/SON/upX/Range"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasReligion -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasReligion">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/spice/SON/upX/PersonalReligion"/>
+        <rdfs:range rdf:resource="https://w3id.org/spice/SON/upX/Religion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasRole -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasSkill -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasSkill">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/spice/SON/upX/PersonalSkill"/>
+        <rdfs:range rdf:resource="https://w3id.org/spice/SON/upX/Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasValues -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasValues">
+        <rdfs:domain rdf:resource="https://w3id.org/spice/SON/upX/PersonalValues"/>
+        <rdfs:range rdf:resource="https://w3id.org/spice/SON/Values/Values"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/hasVisitMotivation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spice/SON/upX/hasVisitMotivation">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/spice/SON/upX/PersonalVisitMotivation"/>
+        <rdfs:range rdf:resource="https://w3id.org/spice/SON/upX/VisitMotivation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/age -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/spice/SON/upX/age">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/id -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/spice/SON/upX/id">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/level -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/spice/SON/upX/level"/>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/max -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/spice/SON/upX/max">
+        <rdfs:domain rdf:resource="https://w3id.org/spice/SON/upX/Range"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/min -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/spice/SON/upX/min">
+        <rdfs:domain rdf:resource="https://w3id.org/spice/SON/upX/Range"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/password -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/spice/SON/upX/password">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/up#EducationLevel -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/up#EducationLevel"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/up#InterestType -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/up#InterestType"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/up#Level -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/up#Level"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/up#PersonalInformation -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- https://w3id.org/spice/SON/Values/Values -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/Values/Values"/>
+    
+
+
+    <!-- https://w3id.org/spice/SON/emotion/Emotion -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/emotion/Emotion"/>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Background -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Background">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Curation -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Curation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spice/SON/upX/PersonalSkill"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/CurrentFalkIdentity -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/CurrentFalkIdentity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spice/SON/upX/PersonalTrait"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Desider -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Desider">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Experience -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Experience">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/ExperiencedEmotion -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/ExperiencedEmotion">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/spice/SON/upX/hasEmotion"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/spice/SON/emotion/Emotion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Gender -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Gender">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/LearningStyle -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/LearningStyle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spice/SON/upX/PersonalTrait"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/PersonalReligion -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/PersonalReligion">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/PersonalSkill -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/PersonalSkill">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/PersonalTrait -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/PersonalTrait">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/PersonalValues -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/PersonalValues">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/spice/SON/upX/hasValues"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/spice/SON/Values/Values"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/PersonalVisitMotivation -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/PersonalVisitMotivation">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#PersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Personality -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Personality">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spice/SON/upX/PersonalTrait"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/PreferredCurationType -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/PreferredCurationType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spice/SON/upX/PersonalTrait"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Range -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Range">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/ReadingLanguage -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/ReadingLanguage">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spice/SON/upX/PersonalSkill"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Religion -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Religion">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Role -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Role">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Skill -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Skill">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/ThematicSubject -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/ThematicSubject">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/up#InterestType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/Visit -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/Visit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spice/SON/upX/Experience"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/VisitMotivation -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/VisitMotivation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/WritingLanguage -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/upX/WritingLanguage">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spice/SON/upX/PersonalSkill"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/PrimaryEducation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/spice/SON/upX/PrimaryEducation">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/UNIS/up#EducationLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/spice/SON/upX/SecondaryEducation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/spice/SON/upX/SecondaryEducation">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/UNIS/up#EducationLevel"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
