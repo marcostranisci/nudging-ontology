@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://ontologydesignpatterns.org/wiki/index.php?title=Special:ClickHandler&amp;link=http://www.ontologydesignpatterns.org/ont/dul/DUL.owl&amp;message=Ontology%20Ontology:DOLCE+DnS%20Ultralite&amp;from_page_id=1129&amp;update=update"/>
     <uri id="Imports Wizard Entry" name="https://w3id.org/spice/SON/CommunityOntology/0.0.2" uri="file:/home/marco/SON_Community_ontology.owl"/>
     <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
     <uri id="Imports Wizard Entry" name="http://www.w3.org/2006/time#2016" uri="https://raw.githubusercontent.com/w3c/sdw/refs/heads/gh-pages/time/rdf/time.rdf"/>
     <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="http://ontologydesignpatterns.org/wiki/index.php?title=Special:ClickHandler&amp;link=http://www.ontologydesignpatterns.org/ont/dul/DUL.owl&amp;message=Ontology%20Ontology:DOLCE+DnS%20Ultralite&amp;from_page_id=1129&amp;update=update"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1736491082979" name="https://purl.archive.org/nudging" uri="nudging.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1739952633208" name="https://purl.archive.org/nudging" uri="nudging.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1739952633208" name="https://w3id.org/spice/SON/upX" uri="upX.owl"/>
     </group>
 </catalog>
