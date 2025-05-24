@@ -1,0 +1,46 @@
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX urb: <http://purl.archive.org/urbooks#>
+PREFIX urw: <http://purl.archive.org/urwriters#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX reo: <http://www.semanticweb.org/research-ontology/>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX soa: <https://semopenalex.org/ontology/>
+PREFIX ndg: <https://purl.archive.org/nudging#>
+
+
+CONSTRUCT {
+    ?myear a ndg:Year .
+    ?situation a ndg:SocialContext;
+    dul:isSettingFor ?census,?myear .
+    
+    ?census ndg:accidents ?accidents ; ndg:vehiclesNumber ?vehicles
+
+    
+} WHERE {
+  SERVICE <x-sparql-anything:csv.headers=true,location=data/f7_accidents.csv> {
+    []      xyz:cens ?cens;
+    xyz:year ?year;
+    xyz:n_accidents ?n_accidents;
+    xyz:vehicles_involved ?vehicles_involved;
+  }
+  BIND(IRI(CONCAT(STR(ndg:), ?cens )) AS ?census).
+  BIND(IRI(CONCAT(STR(ndg:),?year)) AS ?myear) .
+  BIND (xsd:integer(?year) AS ?y) .
+
+  BIND (STR(fx:entity(?cens,"_",?avg_distance,"_",?year)) as ?mydist)  
+  
+  BIND (xsd:integer(?n_accidents) AS ?accidents)
+
+
+  BIND (xsd:float(?vehicles_involved) AS ?vehicles) .
+  
+}

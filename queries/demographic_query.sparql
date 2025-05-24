@@ -1,0 +1,66 @@
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX urb: <http://purl.archive.org/urbooks#>
+PREFIX urw: <http://purl.archive.org/urwriters#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX reo: <http://www.semanticweb.org/research-ontology/>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX soa: <https://semopenalex.org/ontology/>
+PREFIX ndg: <https://purl.archive.org/nudging#>
+
+
+CONSTRUCT {
+    ?myear a ndg:Year .
+    ?situation a ndg:SocialContext;
+    dul:isSettingFor ?census,?myear,?women,?men,?fwomen,?fmen .
+    ?myear ndg:year ?y .
+    ?census a ndg:Census .
+    ?women a ndg:Women; ndg:total ?fem ; rdfs:label 'women' .
+    ?men a ndg:Men; ndg:total ?mas ; rdfs:label 'men' .
+    ?fwomen a ndg:ForeignWomen; ndg:total ?femst ; rdfs:label 'foreign women' .
+    ?fmen a ndg:ForeignMen; ndg:total ?masst ; rdfs:label 'foreign men' 
+    
+} WHERE {
+  SERVICE <x-sparql-anything:csv.headers=true,location=data/f4_demography.csv> {
+    []      xyz:cens ?cens;
+    xyz:year ?year;
+    xyz:tot_F ?totf;
+    xyz:tot_M ?totm;
+    xyz:foreign_F ?forf;
+    xyz:foreign_M ?form;
+            
+
+  }
+  BIND(IRI(CONCAT(STR(ndg:), ?cens )) AS ?census).
+  BIND(IRI(CONCAT(STR(ndg:),?year)) AS ?myear) .
+  BIND (xsd:integer(?year) AS ?y) .
+  BIND (xsd:integer(?totf) AS ?fem) .
+  BIND (xsd:integer(?totm) AS ?mas) .
+  BIND (xsd:integer(?forf) AS ?femst) .
+  BIND (xsd:integer(?form) AS ?masst) .
+  
+  BIND (STR(fx:entity(?cens,"_",?year)) AS ?mysit) .
+  BIND (IRI(CONCAT(STR(ndg:),?mysit)) AS ?situation) .
+  
+  BIND (STR(fx:entity(?cens,"_",?year,"_women")) AS ?grfem) . 
+  BIND(IRI(CONCAT(STR(ndg:),?grfem)) AS ?women) .
+  
+  BIND (STR(fx:entity(?cens,"_",?year,"_men")) AS ?grmas) . 
+  BIND(IRI(CONCAT(STR(ndg:),?grmas)) AS ?men) .
+  
+  BIND (STR(fx:entity(?cens,"_",?year,"_foreignWomen")) AS ?grforf) . 
+  BIND(IRI(CONCAT(STR(ndg:),?grforf)) AS ?fwomen) .
+
+  BIND (STR(fx:entity(?cens,"_",?year,"_foreignMen")) AS ?grform) . 
+  BIND(IRI(CONCAT(STR(ndg:),?grform)) AS ?fmen) .
+
+  
+}

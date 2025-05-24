@@ -1,0 +1,50 @@
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX urb: <http://purl.archive.org/urbooks#>
+PREFIX urw: <http://purl.archive.org/urwriters#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX reo: <http://www.semanticweb.org/research-ontology/>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX soa: <https://semopenalex.org/ontology/>
+PREFIX ndg: <https://purl.archive.org/nudging#>
+
+
+CONSTRUCT {
+?census ndg:hasStreet ?street; ndg:hasSuburb ?suburb .
+
+?street rdfs:label ?str .
+?suburb rdfs:label ?sub .
+
+    
+} WHERE {
+  SERVICE <x-sparql-anything:csv.headers=true,location=data/f1_census.csv> {
+    []      xyz:cens ?cens;
+    xyz:Street ?str;
+    xyz:Suburb ?sub;
+    
+            
+
+  }
+  BIND(IRI(CONCAT(STR(ndg:), ?cens )) AS ?census).
+
+  BIND (fx:String.replace(?str, " ", "-") as ?stre) .
+  BIND (fx:String.toLowerCase(?stre) as ?stree) .
+  
+  BIND (IRI(CONCAT(STR(ndg:),?stree)) AS ?street) .
+
+
+  BIND (fx:String.replace(?sub, " ", "-") as ?subu)
+  BIND (fx:String.toLowerCase(?subu) as ?subuu) .
+
+  BIND(IRI(CONCAT(STR(ndg:),?subuu)) AS ?suburb) .
+
+  
+}

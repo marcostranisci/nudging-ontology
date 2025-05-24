@@ -1,0 +1,17 @@
+xyz:tot_F ?totf;
+    xyz:tot_M ?totm;
+    xyz:foreign_F ?forf;
+    xyz:foreign_M ?form;
+
+
+
+      BIND (xsd:integer(?totf) AS ?fem) .
+  BIND (xsd:integer(?totm) AS ?mas) .
+  BIND (xsd:integer(?forf) AS ?femst) .
+  BIND (xsd:integer(?form) AS ?masst) .
+  BIND (fx:entity(?cens,"_",?year) AS ?mysit) .
+  BIND (IRI(CONCAT(STR(ndg:),?mysit)) AS ?situation ) .
+  BIND (IRI(CONCAT(fx:entity(?cens,"_",?fem))) AS ?grfem) .
+  BIND (IRI(CONCAT(fx:entity(?cens,"_",?mas))) AS ?grmas) .
+  BIND (IRI(CONCAT(fx:entity(?cens,"_",?femst))) AS ?grforg) .
+  BIND (IRI(CONCAT(fx:entity(?cens,"_",?masst))) AS ?grform)
