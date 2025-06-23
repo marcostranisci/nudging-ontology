@@ -419,6 +419,12 @@
     
 
 
+    <!-- https://purl.archive.org/nudging#average -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#average"/>
+    
+
+
     <!-- https://purl.archive.org/nudging#busStopNumber -->
 
     <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#busStopNumber">

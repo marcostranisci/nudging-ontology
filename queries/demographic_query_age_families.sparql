@@ -1,0 +1,71 @@
+PREFIX fx: <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX urb: <http://purl.archive.org/urbooks#>
+PREFIX urw: <http://purl.archive.org/urwriters#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX reo: <http://www.semanticweb.org/research-ontology/>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX soa: <https://semopenalex.org/ontology/>
+PREFIX ndg: <https://purl.archive.org/nudging#>
+
+
+CONSTRUCT {
+    ?myear a ndg:Year .
+    ?situation a ndg:SocialContext;
+    dul:isSettingFor ?census,?myear,?families,?minors,?seniors,?working_people .
+    ?myear ndg:year ?y .
+    ?census a ndg:Census .
+    ?minors a ndg:Minors; ndg:total ?tot_minors ; rdfs:label 'minors' .
+    ?families a ndg:Family; ndg:total ?tot_fam ; rdfs:label 'families'; ndg:average ?tot_comp .
+    ?seniors a ndg:Seniors; ndg:total ?tot_seniors ; rdfs:label 'seniors' .
+    ?working_people a ndg:WorkingAgePeople; ndg:total ?tot_working ; rdfs:label 'working age people' 
+    
+} WHERE {
+  SERVICE <x-sparql-anything:csv.headers=true,location=data/f4_demography.csv> {
+    []      xyz:cens ?cens;
+    xyz:year ?year;
+    xyz:n_fam ?fam;
+    xyz:n_componen ?comp;
+    xyz:minors ?mino;
+    xyz:working_ag ?work;
+    xyz:seniors ?seno;
+
+            
+
+  }
+  BIND(IRI(CONCAT(STR(ndg:), ?cens )) AS ?census).
+  BIND(IRI(CONCAT(STR(ndg:),?year)) AS ?myear) .
+  BIND (xsd:integer(?year) AS ?y) .
+  BIND (xsd:integer(?fam) AS ?tot_fam) .
+  BIND (xsd:float(?mino) AS ?tot_minors) .
+  BIND (xsd:float(?work) AS ?tot_working) .
+  BIND (xsd:float(?seno) AS ?tot_seniors) .
+
+  BIND (xsd:float(?comp) AS ?tot_comp) .
+  
+  BIND (STR(fx:entity(?cens,"_",?year)) AS ?mysit) .
+  BIND (IRI(CONCAT(STR(ndg:),?mysit)) AS ?situation) .
+  
+  BIND (STR(fx:entity(?cens,"_",?year,"_families")) AS ?grfam) . 
+  BIND(IRI(CONCAT(STR(ndg:),?grfam)) AS ?families) .
+    
+  BIND (STR(fx:entity(?cens,"_",?year,"_minors")) AS ?grmin) . 
+  BIND(IRI(CONCAT(STR(ndg:),?grmin)) AS ?minors) .
+
+  BIND (STR(fx:entity(?cens,"_",?year,"_working")) AS ?grwork) . 
+  BIND(IRI(CONCAT(STR(ndg:),?grwork)) AS ?working_people) .
+
+  BIND (STR(fx:entity(?cens,"_",?year,"_seniors")) AS ?grsen) . 
+  BIND(IRI(CONCAT(STR(ndg:),?grsen)) AS ?seniors) .
+
+
+  
+}

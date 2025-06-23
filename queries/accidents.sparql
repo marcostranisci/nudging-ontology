@@ -18,9 +18,10 @@ PREFIX ndg: <https://purl.archive.org/nudging#>
 
 
 CONSTRUCT {
+    
+    ?situation a ndg:SocialContext; dul:isSettingFor ?census,?myear .
+
     ?myear a ndg:Year .
-    ?situation a ndg:SocialContext;
-    dul:isSettingFor ?census,?myear .
     
     ?census ndg:accidents ?accidents ; ndg:vehiclesNumber ?vehicles
 
@@ -36,8 +37,9 @@ CONSTRUCT {
   BIND(IRI(CONCAT(STR(ndg:),?year)) AS ?myear) .
   BIND (xsd:integer(?year) AS ?y) .
 
-  BIND (STR(fx:entity(?cens,"_",?avg_distance,"_",?year)) as ?mydist)  
-  
+  BIND (STR(fx:entity(?cens,"_",?year)) AS ?mysit) .
+  BIND (IRI(CONCAT(STR(ndg:),?mysit)) AS ?situation) .
+
   BIND (xsd:integer(?n_accidents) AS ?accidents)
 
 
