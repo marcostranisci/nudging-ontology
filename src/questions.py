@@ -28,11 +28,17 @@ class KGRetriever:
     
     }}
     """
-    req = requests.get(endpoint, params={"query": question, "format": "json"})
+    req = requests.get(self.endpoint, params={"query": question, "format": "json"})
     if req.status_code != 200:
         return f"Query failed with status code {req.status_code}"
     else:
-        return req.json()
+        res = req.json()
+        if not res['results']['bindings']:
+          return "No results found for the given census."
+        else:
+          res = {'category':category,'year':year,'census':census,'number':res['results']['bindings'][0]['counted']['value']}
+
+          return res
 
   def question_2(self,year='ndg:2019'):
     """
@@ -59,7 +65,8 @@ class KGRetriever:
 
 
     """
-    req = requests.get(endpoint, params={"query": question, "format": "json"})
+    print(question)
+    req = requests.get(self.endpoint, params={"query": question, "format": "json"})
     if req.status_code != 200:
       return f"Query failed with status code {req.status_code}"
     else:
@@ -88,11 +95,27 @@ class KGRetriever:
 
     }} ORDER BY DESC(?tot_minors)
     """
-    req = requests.get(endpoint, params={"query": question, "format": "json"})
+    req = requests.get(self.endpoint, params={"query": question, "format": "json"})
     if req.status_code != 200:
       return f"Query failed with status code {req.status_code}"
     else:
-      return req.json()
+        all_res = []
+        res = req.json()
+        if not res['results']['bindings']:
+          return "No results found for the given census."
+        else:
+          for item in res['results']['bindings']:
+            
+            tot_m = item['tot_m']['value']
+            tot_w = item['tot_w']['value']
+            tot_minors = item['tot_minors']['value']
+            census = item['census']['value']
+            street = item['street']['value']
+            res = {'census':census,'street':street,'n_men':tot_m,'n_women':tot_w,'n_minors':tot_minors,'year':year}
+            all_res.append(res)
+          
+          return all_res
+           
 
   def question_13(self,year='ndg:2019'):
       """
@@ -120,7 +143,7 @@ class KGRetriever:
 
       }} ORDER BY DESC(?accidents)
       """
-      req = requests.get(endpoint, params={"query": question, "format": "json"})
+      req = requests.get(self.endpoint, params={"query": question, "format": "json"})
       if req.status_code != 200:
         return f"Query failed with status code {req.status_code}"
       else:
@@ -146,9 +169,21 @@ class KGRetriever:
       }} ORDER BY DESC(?n_bus_stop)
         """
 
-      req = requests.get(endpoint, params={"query": question, "format": "json"})
+      req = requests.get(self.endpoint, params={"query": question, "format": "json"})
       if req.status_code != 200:
         return f"Query failed with status code {req.status_code}"
       else:
         return req.json()
 
+
+
+# Example usage:
+kg_retriever = KGRetriever("https://kgccc.di.unito.it/sparql/nudging")
+
+
+# given a group, a census, and a year, this returns the number of people in that group in the censu
+
+print(kg_retriever.question_1(category='ndg:Women',year='ndg:2012',census='ndg:34'))
+
+# this returns the number of men, women, and minors in a given census and year
+print(kg_retriever.question_3(census='ndg:1', year='ndg:2019'))
