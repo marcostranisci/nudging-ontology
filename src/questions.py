@@ -10,7 +10,7 @@ class KGRetriever:
       self.census = [f"ndg:{i}" for i in range(1,3851)]
 
 
-  def question_1(self,category='ndg:Women',year='ndg:2017',census="ndg:1"):
+  def question_1(self,category='ndg:Women',year='ndg:2017'):
 
     """
     From 2012 to 2019 the population in Turin has decreased. Considering all the census, does this decrease affect all the demographics? Which category is more affected and which one is less affected?
@@ -24,7 +24,6 @@ class KGRetriever:
     dul:isSettingFor ?a, ?b,?c .
     ?b a {category}; ndg:total ?b_total.
     FILTER(?a={year}) . 
-    FILTER(?c={census}) .
     
     }}
     """
