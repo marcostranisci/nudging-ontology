@@ -83,7 +83,7 @@ class KGRetriever:
           res = {'district':item['dist']['value'],
                  'year':year,
                  'foreigners':item['foreigners']['value'],
-                 'faily_components':item['fam_total']['value']}
+                 'family_components':item['fam_total']['value']}
           all_res.append(res)
         return all_res
 
@@ -253,7 +253,6 @@ kg_retriever = KGRetriever("https://kgccc.di.unito.it/sparql/nudging")
 
 
 
-print(kg_retriever.question_2())
 '''# given a group, a census, and a year, this returns the number of people in that group in the censu
 
 print(kg_retriever.question_1(category='ndg:Women',year='ndg:2012',census='ndg:34'))
