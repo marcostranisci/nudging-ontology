@@ -19,11 +19,11 @@ PREFIX ndg: <https://purl.archive.org/nudging#>
 
 CONSTRUCT {
     
-    ?situation a ndg:SocialContext; dul:isSettingFor ?census,?myear .
+    ?situation a ndg:SocialContext; dul:isSettingFor ?accidents .
 
-    ?myear a ndg:Year .
+    #?myear a ndg:Year .
     
-    ?census ndg:accidents ?accidents ; ndg:vehiclesNumber ?vehicles
+    #?census ndg:accidents ?accidents ; ndg:vehiclesNumber ?vehicles
 
     
 } WHERE {

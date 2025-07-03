@@ -18,22 +18,23 @@ PREFIX ndg: <https://purl.archive.org/nudging#>
 
 
 CONSTRUCT {
-?census ndg:hasStreet ?street; ndg:hasSuburb ?suburb .
-
-?street rdfs:label ?str .
-?suburb rdfs:label ?sub .
+?situation a ndg:SocialContext; dul:isSettingFor ?suburb .
 
     
 } WHERE {
-  SERVICE <x-sparql-anything:csv.headers=true,location=data/f1_census.csv> {
+  SERVICE <x-sparql-anything:csv.headers=true,location=data/f1_census_with_years.csv> {
     []      xyz:cens ?cens;
     xyz:Street ?str;
     xyz:Suburb ?sub;
+    xyz:year ?year ;
     
             
 
   }
   BIND(IRI(CONCAT(STR(ndg:), ?cens )) AS ?census).
+  
+  BIND (STR(fx:entity(?cens,"_",?year)) AS ?mysit) .
+  BIND (IRI(CONCAT(STR(ndg:),?mysit)) AS ?situation) .
 
   BIND (fx:String.replace(?str, " ", "-") as ?stre) .
   BIND (fx:String.toLowerCase(?stre) as ?stree) .

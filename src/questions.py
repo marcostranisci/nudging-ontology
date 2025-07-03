@@ -1,4 +1,5 @@
 import requests
+from collections import defaultdict
 
 
 
@@ -19,9 +20,9 @@ class KGRetriever:
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
     PREFIX ndg: <https://purl.archive.org/nudging#>
-    SELECT (SUM(?b_total) as ?counted) WHERE {{
+    SELECT DISTINCT ?b_total ?district WHERE {{
     ?x a ndg:SocialContext;
-    dul:isSettingFor ?a, ?b,?c .
+    dul:isSettingFor ?a, ?b,?c, ?district.
     ?b a {category}; ndg:total ?b_total.
     FILTER(?a={year}) . 
     
@@ -31,32 +32,37 @@ class KGRetriever:
     if req.status_code != 200:
         return f"Query failed with status code {req.status_code}"
     else:
+        all_res = []
         res = req.json()
         if not res['results']['bindings']:
           return "No results found for the given census."
         else:
-          res = {'category':category,'year':year,'census':census,'number':res['results']['bindings'][0]['counted']['value']}
+          for item in res['results']['bindings']:
 
-          return res
-
+            res = {'category':category,'year':year,'district':item['district']['value'],'number':item['b_total']['value']}
+            all_res.append(res)
+          return all_res
+        
   def question_2(self,year='ndg:2019'):
     """
-    Does a high number of females in a census mean a high number of minors in that census?
+    Is there any correlation between the number of foreigners and the number of families? 
+    Can you spot whether a high number of foreigners in a census means a high number of components in families?
     """
 
     question = f"""
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
     PREFIX ndg: <https://purl.archive.org/nudging#>
-    SELECT ((?tot_fowo + ?tot_fome)/(?tot_m+?tot_w) AS ?total) ((?tot_m+?tot_w)/?fam_total AS ?tot_fam)  WHERE {{
-      ?sit a ndg:SocialContext ; dul:isSettingFor ?wo, ?men, ?fowo,?fome, ?fam, ?y.
-    ?fowo a ndg:ForeignWomen; ndg:total ?tot_fowo . 
+    SELECT ?foreigners ?dist ?fam_total WHERE {{
+      ?sit a ndg:SocialContext ; dul:isSettingFor ?fowo,?fome, ?fam, ?y, ?dist, ?cens.
+      ?cens a ndg:Census; ndg:hasSuburb ?dist .
+     ?fowo a ndg:ForeignWomen; ndg:total ?tot_fowo . 
       ?fome a ndg:ForeignMen; ndg:total ?tot_fome .
-    ?fam a ndg:Family; ndg:total ?fam_total .
-      ?wo a ndg:Women; ndg:total ?tot_w . 
-      ?men a ndg:Men; ndg:total ?tot_m .
-    ?fam a ndg:Family; ndg:total ?fam_total .
-      
+     
+     BIND((?tot_fowo+?tot_fome) as ?foreigners) .
+    
+      ?fam a ndg:Family; ndg:average ?fam_total .
+
       FILTER(?y={year}) .
     }}
 
@@ -64,12 +70,22 @@ class KGRetriever:
 
 
     """
-    print(question)
     req = requests.get(self.endpoint, params={"query": question, "format": "json"})
     if req.status_code != 200:
       return f"Query failed with status code {req.status_code}"
     else:
-      return req.json()
+      all_res = []
+      res = req.json()
+      if not res['results']['bindings']:
+        return "No results found for the given census."
+      else:
+        for item in res['results']['bindings']:
+          res = {'district':item['dist']['value'],
+                 'year':year,
+                 'foreigners':item['foreigners']['value'],
+                 'faily_components':item['fam_total']['value']}
+          all_res.append(res)
+        return all_res
 
       
 
@@ -113,8 +129,49 @@ class KGRetriever:
             res = {'census':census,'street':street,'n_men':tot_m,'n_women':tot_w,'n_minors':tot_minors,'year':year}
             all_res.append(res)
           
+          #all_res = self.__sum_elements(all_res)
           return all_res
            
+  
+  def question_10(self,year='ndg:2019'):
+    """
+    Which districts experienced the largest changes (either increase or decrease) in the percentage of minors between 2012 and 2019?
+    """
+    question = f""" 
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+      PREFIX ndg: <https://purl.archive.org/nudging#>
+
+      SELECT DISTINCT ?population ?district  ?accidents WHERE {{    ?sit a ndg:SocialContext; dul:isSettingFor ?cens,?wo,?men,?y, ?district, ?accidents.
+
+      ?y a ndg:Year .
+      FILTER(?y={year}) .
+
+      ?wo a ndg:Women; ndg:total ?tot_w . 
+      ?men a ndg:Men; ndg:total ?tot_m .
+
+
+      ?cens ndg:accidents ?accidents; ndg:hasSuburb ?district .
+      BIND((?tot_w+?tot_m) as ?population) .
+
+
+
+
+      }}      """
+    
+    req = requests.get(self.endpoint, params={"query": question, "format": "json"})
+    if req.status_code != 200:
+      return f"Query failed with status code {req.status_code}"
+    else:
+      all_res = []
+      res = req.json()
+      if not res['results']['bindings']:
+        return "No results found for the given census."
+      else:
+        for item in res['results']['bindings']:
+          res = {'population':item['population']['value'],'year':year,'accidents':item['accidents']['value']}
+          all_res.append(res)
+        return all_res
 
   def question_13(self,year='ndg:2019'):
       """
@@ -125,7 +182,7 @@ class KGRetriever:
       PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
       PREFIX ndg: <https://purl.archive.org/nudging#>
 
-      SELECT DISTINCT ((?tot_w+?tot_m) AS ?population) ?cens ?street ?accidents WHERE {{    ?sit a ndg:SocialContext; dul:isSettingFor ?cens,?wo,?men,?y.
+      SELECT DISTINCT ?population ?district  ?accidents WHERE {{    ?sit a ndg:SocialContext; dul:isSettingFor ?cens,?wo,?men,?y, ?district, ?accidents.
 
       ?y a ndg:Year .
       FILTER(?y={year}) .
@@ -134,23 +191,30 @@ class KGRetriever:
       ?men a ndg:Men; ndg:total ?tot_m .
 
 
-      ?cens ndg:accidents ?accidents; ndg:hasStreet ?str .
-
-      ?str rdfs:label ?street
-
+      ?cens ndg:accidents ?accidents; ndg:hasSuburb ?district .
+      BIND((?tot_w+?tot_m) as ?population) .
 
 
-      }} ORDER BY DESC(?accidents)
-      """
+
+
+      }}      """
       req = requests.get(self.endpoint, params={"query": question, "format": "json"})
       if req.status_code != 200:
         return f"Query failed with status code {req.status_code}"
       else:
-        return req.json()
+        all_res = []
+        res = req.json()
+        if not res['results']['bindings']:
+          return "No results found for the given census."
+        else:
+          for item in res['results']['bindings']:
+            res = {'population':item['population']['value'],'year':year,'accidents':item['accidents']['value']}
+            all_res.append(res)
+          return all_res
 
   def question_17(self,year='ndg:2019'):
       """
-      Which district has the highest number of bus/tram stops in the census?
+      Which district has the highest number of bus/tram stops?
       """
       question = f"""
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -172,7 +236,15 @@ class KGRetriever:
       if req.status_code != 200:
         return f"Query failed with status code {req.status_code}"
       else:
-        return req.json()
+        all_res = []
+        res = req.json()
+        if not res['results']['bindings']:
+          return "No results found for the given census."
+        else:
+          for item in res['results']['bindings']:
+            res = {'district':item['district']['value'],'year':year,'bus_stop':item['n_bus_stop']['value']}
+            all_res.append(res)
+          return all_res
 
 
 
@@ -180,9 +252,12 @@ class KGRetriever:
 kg_retriever = KGRetriever("https://kgccc.di.unito.it/sparql/nudging")
 
 
-# given a group, a census, and a year, this returns the number of people in that group in the censu
+
+print(kg_retriever.question_2())
+'''# given a group, a census, and a year, this returns the number of people in that group in the censu
 
 print(kg_retriever.question_1(category='ndg:Women',year='ndg:2012',census='ndg:34'))
 
 # this returns the number of men, women, and minors in a given census and year
-print(kg_retriever.question_3(census='ndg:1', year='ndg:2019'))
+print(kg_retriever.question_3(census='ndg:1', year='ndg:2019'))+
+'''
