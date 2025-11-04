@@ -141,6 +141,15 @@
     
 
 
+    <!-- https://purl.archive.org/nudging#bringsAbout -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#bringsAbout">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialChange"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.archive.org/nudging#challenges -->
 
     <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#challenges">
@@ -397,6 +406,15 @@
         <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialChange"/>
         <rdfs:label xml:lang="en">it links a political action to its expected outcome</rdfs:label>
         <rdfs:label xml:lang="en">produces</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#references -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#references">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
     </owl:ObjectProperty>
     
 
@@ -1161,17 +1179,114 @@
     
 
 
+    <!-- https://purl.archive.org/nudging#A_heteroscedasticity-consistent_covariance_matrix_estimator -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#A_heteroscedasticity-consistent_covariance_matrix_estimator">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:comment xml:lang="en">White, H., 1980. A heteroscedasticity-consistent covariance matrix estimator and a direct
+test for heteroscedasticity. Econometrica 48, 817–838.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#A_model_of_residential_location_choice_and_commuting -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#A_model_of_residential_location_choice_and_commuting">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:comment xml:lang="en">White, M., 1977. A model of residential location choice and commuting by men and
+women. J. Reg. Sci. 17, 41–52.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Bun_Song_Lee -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Bun_Song_Lee">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Cities_and_Housing -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Cities_and_Housing">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:comment xml:lang="en">Muth, R., 1969. Cities and Housing. University of Chicago Press, Chicago.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://purl.archive.org/nudging#CommutingTimeDecisions -->
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#CommutingTimeDecisions">
         <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <addressesIssue rdf:resource="https://purl.archive.org/nudging#married_women_geographic_restrictions"/>
+        <citesTheory rdf:resource="https://purl.archive.org/nudging#basic_monocentric_city_model"/>
+        <citesTheory rdf:resource="https://purl.archive.org/nudging#household_residential_location_in_urban_areas"/>
+        <citesTheory rdf:resource="https://purl.archive.org/nudging#wages_decline_with_distance"/>
+        <hasAuthor rdf:resource="https://purl.archive.org/nudging#Bun_Song_Lee"/>
+        <hasAuthor rdf:resource="https://purl.archive.org/nudging#John_F._McDonald"/>
         <hasAuthor rdf:resource="https://purl.archive.org/nudging#Sung_Hyo_Hong"/>
         <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#couples"/>
         <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#urban_policy_makers"/>
         <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#women"/>
+        <references rdf:resource="https://purl.archive.org/nudging#A_heteroscedasticity-consistent_covariance_matrix_estimator"/>
+        <references rdf:resource="https://purl.archive.org/nudging#A_model_of_residential_location_choice_and_commuting"/>
+        <references rdf:resource="https://purl.archive.org/nudging#Cities_and_Housing"/>
+        <references rdf:resource="https://purl.archive.org/nudging#Determinants_of_commuting_time_and_distance_Seoul"/>
+        <references rdf:resource="https://purl.archive.org/nudging#Income_and_urban_residence_analysis_of_consumer_demand"/>
+        <references rdf:resource="https://purl.archive.org/nudging#Location_and_Land_Use"/>
+        <references rdf:resource="https://purl.archive.org/nudging#Sex_differences_in_urban_commuting_patterns"/>
         <DOI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1016/j.regsciurbeco.2018.01.010</DOI>
         <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</year>
         <rdfs:comment>&quot;Commuting Time Decisions for Two-Worker Households in Korea&quot;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Determinants_of_commuting_time_and_distance_Seoul -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Determinants_of_commuting_time_and_distance_Seoul">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:comment xml:lang="en">Determinants of commuting time and distance for Seoul
+residents: the impact of family status on the commuting of women. Urban Stud. 40 (7), 1283–1302.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Income_and_urban_residence_analysis_of_consumer_demand -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Income_and_urban_residence_analysis_of_consumer_demand">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:comment xml:lang="en">Wheaton, W., 1977. Income and urban residence: an analysis of consumer demand for
+location. Am. Econ. Rev. 67 (4), 620–631.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#John_F._McDonald -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#John_F._McDonald">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Location_and_Land_Use -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Location_and_Land_Use">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:comment xml:lang="en">Alonso, W., 1964. Location and Land Use. Harvard University Press, Cambridge, MA.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Sex_differences_in_urban_commuting_patterns -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Sex_differences_in_urban_commuting_patterns">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:comment xml:lang="en">White, M., 1986. Sex differences in urban commuting patterns. Am. Econ. Rev. 76 (2),
+368–372.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1197,6 +1312,15 @@
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#alice">
         <belongsTo rdf:resource="https://purl.archive.org/nudging#low-income-commuters"/>
         <belongsTo rdf:resource="https://purl.archive.org/nudging#women"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#basic_monocentric_city_model -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#basic_monocentric_city_model">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <rdfs:comment xml:lang="en">Basic monocentric city model assumes that all employment is located at the central point (central business district, or CBD) and all households have one worker. Household equilibrium in the model includes the condition that the marginal cost and marginal benefit of commuting distance are equal; the cost of one more mile of commuting equals the saving on housing expenses.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1242,6 +1366,15 @@
     
 
 
+    <!-- https://purl.archive.org/nudging#household_residential_location_in_urban_areas -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#household_residential_location_in_urban_areas">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <rdfs:comment xml:lang="en">Basic theory of household residential location in urban areas: influenced by the tradeoff between commuting costs which increases and the price of housing which decreases with the distance from a central business district.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://purl.archive.org/nudging#low-income-commuters -->
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#low-income-commuters">
@@ -1254,6 +1387,15 @@
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#lower-commute-duration">
         <rdfs:label xml:lang="en">lower commute duration</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#married_women_geographic_restrictions -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#married_women_geographic_restrictions">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+        <rdfs:comment xml:lang="en">Married women face geographic restrictions in their market work activities. There are social costs of mismatch between education levels and work activities for women. (92.25 % of the households of working couples have the male as the higher predicted wage commuter and the lower predicted wage commuter is female)</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1298,6 +1440,15 @@ low-income groups or minorities</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#urban_policy_makers">
         <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#wages_decline_with_distance -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#wages_decline_with_distance">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <rdfs:comment xml:lang="en">Research on urban wage gradients shows that wages decline with distance to the central business district because the savings in commuting costs for workers employed in the Central Business District increase with distance.</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -1359,4 +1510,6 @@ low-income groups or minorities</rdfs:comment>
 
 
 <!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
+
 
