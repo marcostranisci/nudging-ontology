@@ -464,6 +464,15 @@
     
 
 
+    <!-- https://purl.archive.org/nudging#usesMethodology -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#usesMethodology">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#Methodology"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1199,9 +1208,37 @@ women. J. Reg. Sci. 17, 41–52.</rdfs:comment>
     
 
 
+    <!-- https://purl.archive.org/nudging#Ayana_Lamatkhanova -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Ayana_Lamatkhanova">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Built_Environment_Shape_Commuting -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Built_Environment_Shape_Commuting">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <citesTheory rdf:resource="https://purl.archive.org/nudging#3D_socioeconomics"/>
+        <hasAuthor rdf:resource="https://purl.archive.org/nudging#Ayana_Lamatkhanova"/>
+        <hasAuthor rdf:resource="https://purl.archive.org/nudging#Charles_Raux"/>
+        <hasAuthor rdf:resource="https://purl.archive.org/nudging#Lény_Grassot"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://purl.archive.org/nudging#Bun_Song_Lee -->
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Bun_Song_Lee">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Charles_Raux -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Charles_Raux">
         <rdf:type rdf:resource="https://purl.archive.org/nudging#Author"/>
     </owl:NamedIndividual>
     
@@ -1227,9 +1264,12 @@ women. J. Reg. Sci. 17, 41–52.</rdfs:comment>
         <hasAuthor rdf:resource="https://purl.archive.org/nudging#Bun_Song_Lee"/>
         <hasAuthor rdf:resource="https://purl.archive.org/nudging#John_F._McDonald"/>
         <hasAuthor rdf:resource="https://purl.archive.org/nudging#Sung_Hyo_Hong"/>
+        <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#commuters"/>
         <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#couples"/>
+        <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#job_employees"/>
         <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#urban_policy_makers"/>
         <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#women"/>
+        <involvesStakeholder rdf:resource="https://purl.archive.org/nudging#working-age_adults"/>
         <references rdf:resource="https://purl.archive.org/nudging#A_heteroscedasticity-consistent_covariance_matrix_estimator"/>
         <references rdf:resource="https://purl.archive.org/nudging#A_model_of_residential_location_choice_and_commuting"/>
         <references rdf:resource="https://purl.archive.org/nudging#Cities_and_Housing"/>
@@ -1237,6 +1277,7 @@ women. J. Reg. Sci. 17, 41–52.</rdfs:comment>
         <references rdf:resource="https://purl.archive.org/nudging#Income_and_urban_residence_analysis_of_consumer_demand"/>
         <references rdf:resource="https://purl.archive.org/nudging#Location_and_Land_Use"/>
         <references rdf:resource="https://purl.archive.org/nudging#Sex_differences_in_urban_commuting_patterns"/>
+        <usesMethodology rdf:resource="https://purl.archive.org/nudging#2010_Korean_Population_and_Housing_census"/>
         <DOI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1016/j.regsciurbeco.2018.01.010</DOI>
         <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</year>
         <rdfs:comment>&quot;Commuting Time Decisions for Two-Worker Households in Korea&quot;</rdfs:comment>
@@ -1267,6 +1308,14 @@ location. Am. Econ. Rev. 67 (4), 620–631.</rdfs:comment>
     <!-- https://purl.archive.org/nudging#John_F._McDonald -->
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#John_F._McDonald">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Author"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Lény_Grassot -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#Lény_Grassot">
         <rdf:type rdf:resource="https://purl.archive.org/nudging#Author"/>
     </owl:NamedIndividual>
     
@@ -1325,6 +1374,14 @@ location. Am. Econ. Rev. 67 (4), 620–631.</rdfs:comment>
     
 
 
+    <!-- https://purl.archive.org/nudging#commuters -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#commuters">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://purl.archive.org/nudging#company-government-conversation -->
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#company-government-conversation">
@@ -1371,6 +1428,14 @@ location. Am. Econ. Rev. 67 (4), 620–631.</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#household_residential_location_in_urban_areas">
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
         <rdfs:comment xml:lang="en">Basic theory of household residential location in urban areas: influenced by the tradeoff between commuting costs which increases and the price of housing which decreases with the distance from a central business district.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#job_employees -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#job_employees">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
     </owl:NamedIndividual>
     
 
@@ -1461,6 +1526,32 @@ low-income groups or minorities</rdfs:comment>
     
 
 
+    <!-- https://purl.archive.org/nudging#working-age_adults -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#working-age_adults">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#2010_Korean_Population_and_Housing_census -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#2010_Korean_Population_and_Housing_census">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Methodology"/>
+        <rdfs:comment xml:lang="en">Use the 2010 Korean Population and Housing census 2 percent sample data from Korean Statistics Office. Wage rate was extracted from proxy variables (2009 Industry-Occupation Employment Structure Survey by Korean Employment Information Institute).  Basic regression analysis for commuting times (measured in minutes) as a function of the two predicted wages and modal choices.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#3D_socioeconomics -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#3D_socioeconomics">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <rdfs:comment xml:lang="en">Build Environment has originally been defined through the famous 3Ds of built environment: Density, Diversity, and Design, initially coined 1997 and since widely used in North American studies. 3D has grown to 5D with the addition of Destination accessibility and Distance to transit. Trip lengths are primarily a function of the Build Environment and secondarily of socioeconomics (SEC). Mode choices depend on both but probably more on SEC.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1510,6 +1601,4 @@ low-income groups or minorities</rdfs:comment>
 
 
 <!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
-
-
 
