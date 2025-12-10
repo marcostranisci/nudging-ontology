@@ -1,0 +1,1387 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://purl.archive.org/nudging#"
+     xml:base="https://purl.archive.org/nudging"
+     xmlns:ndg="https://purl.archive.org/nudging#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://purl.archive.org/nudging">
+        <owl:versionIRI rdf:resource="https://purl.archive.org/nudging/0.1"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#after -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#after"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#before -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#before"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasTime"/>
+    
+
+
+    <!-- https://purl.archive.org/nudging#addressesIssue -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#addressesIssue">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#assess -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#assess">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#nudgeBasedRelation"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#EvaluationProcess"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#Nudge"/>
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#SocialChange"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">the evaluation of the nudging strategy or of the social change</rdfs:comment>
+        <rdfs:label xml:lang="en">assess</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#belongsTo">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community"/>
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>the relation with a person and a series of groups and identities</rdfs:comment>
+        <rdfs:label xml:lang="en">belongs to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#binds -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#binds">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#Policy"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:comment xml:lang="en">the relation of binding between a policy and a political intervention</rdfs:comment>
+        <rdfs:label xml:lang="en">binds</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#bringsAbout -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#bringsAbout">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialChange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#challenges -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#challenges">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+        <rdfs:comment xml:lang="en">the relation between a political action and a social issue</rdfs:comment>
+        <rdfs:label xml:lang="en">challenges</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#citesTheory -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#citesTheory">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#designedFrom -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#designedFrom">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#nudgeBasedRelation"/>
+        <rdfs:comment xml:lang="en">The relation between the nudging strategy and the social change. Every nudging strategy must be defined starting from an expected social change</rdfs:comment>
+        <rdfs:label xml:lang="en">designed from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#emergesFrom -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#emergesFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#Explanation"/>
+        <rdfs:comment xml:lang="en">Every social issue has an explanation</rdfs:comment>
+        <rdfs:label xml:lang="en">emerges from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#excecutesNudgingStrategy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#excecutesNudgingStrategy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#NudgingStrategy"/>
+        <rdfs:comment xml:lang="en">a nudge is an action that must execute at least one nudging strategy</rdfs:comment>
+        <rdfs:label xml:lang="en">executes nudging strategy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#executesEvaluationTask -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#executesEvaluationTask">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#EvaluationProcess"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#EvaluationTask"/>
+        <rdfs:label xml:lang="en">execute evaluation task</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#facilitates -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#facilitates">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#binds"/>
+        <rdfs:comment xml:lang="en">a policy that facilitates the intervention</rdfs:comment>
+        <rdfs:label xml:lang="en">facilitates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasAuthor">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#Author"/>
+        <rdfs:comment>Relates an academic paper to its author</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasContext -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasContext">
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialContext"/>
+        <rdfs:label xml:lang="en">has context</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasDiscrict -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasDiscrict">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#spatialRelation"/>
+        <rdfs:label xml:lang="en">has district</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasImpactIndicator -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasImpactIndicator">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#DataDrivenStrategy"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#ImpactIndicator"/>
+        <rdfs:comment xml:lang="en">The quantifiable objectives of a data-driven strategy</rdfs:comment>
+        <rdfs:label xml:lang="en">has impact indicator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasStreet -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasStreet">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#spatialRelation"/>
+        <rdfs:label xml:lang="en">has street</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasSubAction -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasSubAction">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasSubIssue -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasSubIssue">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasSubPlan -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasSubPlan">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hasSuburb -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hasSuburb">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#spatialRelation"/>
+        <rdfs:label xml:lang="en">has suburb</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#hinders -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#hinders">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#binds"/>
+        <rdfs:comment xml:lang="en">a policy that hinders the intervention</rdfs:comment>
+        <rdfs:label xml:lang="en">hinders</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#impliesPolicy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#impliesPolicy">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#Policy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#includesBeneficiary -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#includesBeneficiary">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent"/>
+        <rdfs:label xml:lang="en">includes beneficiary</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#includesDecisionMaker -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#includesDecisionMaker">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+        <rdfs:label xml:lang="en">includes decision-maker</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#involvesBeneficiary -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#involvesBeneficiary">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#Nudge"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent"/>
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+                    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>involves beneficiary</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#involvesDecisionMaker -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#involvesDecisionMaker">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#Nudge"/>
+        <rdfs:label xml:lang="en">involves decision maker</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#involvesStakeholder -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#involvesStakeholder">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#isAchievedThroughPlan -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#isAchievedThroughPlan">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#isDistantFrom -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#isDistantFrom">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#spatialRelation"/>
+        <rdfs:label xml:lang="en">is distant from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#isModeledOn -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#isModeledOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#EvaluationTask"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#EvaluationModel"/>
+        <rdfs:label xml:lang="en">is modeled on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#isStructuredBy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#isStructuredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#NudgingStrategy"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#DataDrivenStrategy"/>
+        <rdfs:comment xml:lang="en">The relation between nudging strategy (e.g.: gamification to reduce the number of people who take the bus without the ticket) and its internal structure (e.g.: on which data is based? which behavior it relies on?, etc)</rdfs:comment>
+        <rdfs:label xml:lang="en">is structured by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#nudgeBasedRelation -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#nudgeBasedRelation"/>
+    
+
+
+    <!-- https://purl.archive.org/nudging#planOutcome -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#planOutcome">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialChange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#produces -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#produces">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialChange"/>
+        <rdfs:label xml:lang="en">it links a political action to its expected outcome</rdfs:label>
+        <rdfs:label xml:lang="en">produces</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#references -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#references">
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#reliesOn -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#reliesOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#DataDrivenStrategy"/>
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#EvaluationProcess"/>
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#SocialIssue"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment xml:lang="en">Any component of the ontology (the social issue, the strategy to challenge it, and its evaluation) relies on a data collection</rdfs:comment>
+        <rdfs:label xml:lang="en">relies on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#reliesOnData -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#reliesOnData">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#reliesOn"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#DataCollection"/>
+        <rdfs:label>relies on data</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#reliesOnTheory -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#reliesOnTheory">
+        <rdfs:subPropertyOf rdf:resource="https://purl.archive.org/nudging#reliesOn"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <rdfs:label xml:lang="en">relies on theory</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#spatialRelation -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#spatialRelation"/>
+    
+
+
+    <!-- https://purl.archive.org/nudging#usesMethodology -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#usesMethodology">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#Methodology"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.archive.org/nudging#DOI -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#DOI">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#accidents -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#accidents">
+        <rdfs:label xml:lang="en">accidents</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#average -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#average"/>
+    
+
+
+    <!-- https://purl.archive.org/nudging#busStopNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#busStopNumber">
+        <rdfs:label xml:lang="en">bus stop number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#distance -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#distance">
+        <rdfs:label xml:lang="en">distance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#plan_assessment -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#plan_assessment"/>
+    
+
+
+    <!-- https://purl.archive.org/nudging#total -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#total"/>
+    
+
+
+    <!-- https://purl.archive.org/nudging#vehiclesNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#vehiclesNumber">
+        <rdfs:label xml:lang="en">vehicles number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#year -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.archive.org/nudging#year">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+    
+
+
+    <!-- https://purl.archive.org/nudging#AcademicPaper -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#AcademicPaper">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Author -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Author">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#BusStop -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#BusStop">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="en">bus stop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Census -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Census">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="it">area censuaria</rdfs:label>
+        <rdfs:label xml:lang="en">census</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#City -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#City">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="it">città</rdfs:label>
+        <rdfs:label xml:lang="en">city</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Company -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Company">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"/>
+        <rdfs:label xml:lang="en">company</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Country -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Country">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="en">country</rdfs:label>
+        <rdfs:label xml:lang="it">stato</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#County -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#County">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="en">county</rdfs:label>
+        <rdfs:label xml:lang="it">regione</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#DataCollection -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#DataCollection">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:label xml:lang="en">data collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#DataDrivenStrategy -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#DataDrivenStrategy">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.archive.org/nudging#hasImpactIndicator"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://purl.archive.org/nudging#ImpactIndicator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.archive.org/nudging#reliesOn"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://purl.archive.org/nudging#DataCollection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">data-driven strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Distance -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Distance">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:label xml:lang="en">distance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#District -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#District">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="it">circoscrizione</rdfs:label>
+        <rdfs:label xml:lang="en">district</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#EvaluationModel -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#EvaluationModel">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <owl:disjointWith rdf:resource="https://purl.archive.org/nudging#NudgingType"/>
+        <rdfs:comment xml:lang="en">one of the possible evaluation approaches that one can adopt to assess the nudging strategy</rdfs:comment>
+        <rdfs:label>evaluation model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#EvaluationProcess -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#EvaluationProcess">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.archive.org/nudging#executesEvaluationTask"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://purl.archive.org/nudging#EvaluationTask"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <owl:disjointWith rdf:resource="https://purl.archive.org/nudging#Nudge"/>
+        <rdfs:comment xml:lang="en">the evaluation of the nudging strategies and its impact</rdfs:comment>
+        <rdfs:label xml:lang="en">evaluation process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#EvaluationTask -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#EvaluationTask">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
+        <rdfs:label>evaluation task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Explanation -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Explanation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.archive.org/nudging#reliesOn"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://purl.archive.org/nudging#DataCollection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">explanation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#ForeignMen -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#ForeignMen">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+        <rdfs:label xml:lang="en">foreign men</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#ForeignWomen -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#ForeignWomen">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+        <rdfs:label xml:lang="en">foreign women</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#ImpactIndicator -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#ImpactIndicator">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:label xml:lang="en">impact indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#InternationalPolicy -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#InternationalPolicy">
+        <rdfs:subClassOf rdf:resource="https://purl.archive.org/nudging#Policy"/>
+        <rdfs:label xml:lang="en">international policy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#MaleTeenagers -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#MaleTeenagers">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/spice/SON/CommunityOntology/Male"/>
+                            <rdf:Description rdf:about="https://w3id.org/spice/SON/CommunityOntology/Teenager"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+        <rdfs:label xml:lang="en">male teenagers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Men -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Men">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+        <rdfs:label xml:lang="en">men</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Methodology -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Methodology">
+        <rdfs:subClassOf rdf:resource="https://purl.archive.org/nudging#EvaluationProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#NationalPolicy -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#NationalPolicy">
+        <rdfs:subClassOf rdf:resource="https://purl.archive.org/nudging#Policy"/>
+        <rdfs:label xml:lang="en">national policy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#NonProfitOrganization -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#NonProfitOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"/>
+        <rdfs:label xml:lang="en">non-profit organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Nudge -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Nudge">
+        <rdfs:subClassOf rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:label xml:lang="en">nudge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#NudgingStrategy -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#NudgingStrategy">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
+        <rdfs:label xml:lang="en">nudging strategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#NudgingType -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#NudgingType">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <rdfs:label xml:lang="en">nudging type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Policy -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Policy">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:comment xml:lang="en">a policy that relies at a higher level than the political intervention and can hinder or foster the intervention itself</rdfs:comment>
+        <rdfs:label xml:lang="en">policy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#PolicyImplication -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#PolicyImplication">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#PoliticalAction -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#PoliticalAction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#PoliticalAction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.archive.org/nudging#excecutesNudgingStrategy"/>
+                        <owl:someValuesFrom rdf:resource="https://purl.archive.org/nudging#NudgingStrategy"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.archive.org/nudging#designedFrom"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://purl.archive.org/nudging#SocialChange"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <rdfs:label>political action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#PublicAdministration -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#PublicAdministration">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"/>
+        <rdfs:label xml:lang="en">public adminstration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#RegionalPolicy -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#RegionalPolicy">
+        <rdfs:subClassOf rdf:resource="https://purl.archive.org/nudging#Policy"/>
+        <rdfs:label xml:lang="en">regional policy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#SocialChange -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#SocialChange">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#SocialChange"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2006/time#after"/>
+                        <owl:someValuesFrom rdf:resource="https://purl.archive.org/nudging#Nudge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:label xml:lang="en">social change</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#SocialContext -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#SocialContext">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#SocialContext"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:label xml:lang="en">social context</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#SocialIssue -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#SocialIssue">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.archive.org/nudging#SocialIssue"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2006/time#before"/>
+                        <owl:someValuesFrom rdf:resource="https://purl.archive.org/nudging#Policy"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:label xml:lang="en">social issue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Stakeholder -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Stakeholder">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#StatisticZone -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#StatisticZone">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="en">statistic zone</rdfs:label>
+        <rdfs:label xml:lang="it">zona statistica</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Street -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Street">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="en">street</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#StructuredData -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#StructuredData">
+        <rdfs:subClassOf rdf:resource="https://purl.archive.org/nudging#DataCollection"/>
+        <owl:disjointWith rdf:resource="https://purl.archive.org/nudging#UnstructuredData"/>
+        <rdfs:label xml:lang="en">structured data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Suburb -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Suburb">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:label xml:lang="en">suburb</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#UnstructuredData -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#UnstructuredData">
+        <rdfs:subClassOf rdf:resource="https://purl.archive.org/nudging#DataCollection"/>
+        <rdfs:label xml:lang="en">unstructured data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Women -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Women">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+        <rdfs:label xml:lang="en">women</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.archive.org/nudging#Year -->
+
+    <owl:Class rdf:about="https://purl.archive.org/nudging#Year">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/spice/SON/CommunityOntology/Male -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/CommunityOntology/Male"/>
+    
+
+
+    <!-- https://w3id.org/spice/SON/CommunityOntology/Teenager -->
+
+    <owl:Class rdf:about="https://w3id.org/spice/SON/CommunityOntology/Teenager"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.archive.org/nudging#average_income -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#average_income">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#climate_change -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#climate_change">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#commuters -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#commuters">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#company-government-conversation -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#company-government-conversation">
+        <rdfs:label xml:lang="en">conversation between companies and governement</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#cui-et-al -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#cui-et-al">
+        <rdfs:label xml:lang="en">cui, et al</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#equity_planning -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#equity_planning">
+        <rdfs:label xml:lang="en">equity planning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#job_employees -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#job_employees">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#low-income-commuters -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#low-income-commuters">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#lower-commute-duration -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#lower-commute-duration">
+        <rdfs:label xml:lang="en">lower commute duration</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#public-transport-inequalities -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#public-transport-inequalities">
+        <rdfs:label xml:lang="en">public transportation inequalities</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#urban_policy_makers -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#urban_policy_makers">
+        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://purl.archive.org/nudging#women -->
+
+    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#women">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#Census"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#City"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#Country"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#County"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#District"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#StatisticZone"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#Company"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#NonProfitOrganization"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#PublicAdministration"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#ForeignMen"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#ForeignWomen"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#Men"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#Women"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#InternationalPolicy"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#NationalPolicy"/>
+            <rdf:Description rdf:about="https://purl.archive.org/nudging#RegionalPolicy"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
