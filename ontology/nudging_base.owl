@@ -84,9 +84,60 @@
     
 
 
+    <!-- https://purl.archive.org/nudging#Achieves -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#Achieves">
+        <owl:inverseOf rdf:resource="https://purl.archive.org/nudging#isAchievedThroughPlan"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#IsBoundBy -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#IsBoundBy">
+        <owl:inverseOf rdf:resource="https://purl.archive.org/nudging#binds"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#Policy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#IsBroughtAbout -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#IsBroughtAbout">
+        <owl:inverseOf rdf:resource="https://purl.archive.org/nudging#bringsAbout"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#SocialChange"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#IsCitedIn -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#IsCitedIn">
+        <owl:inverseOf rdf:resource="https://purl.archive.org/nudging#citesTheory"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#IsImpliedInPaper -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#IsImpliedInPaper">
+        <owl:inverseOf rdf:resource="https://purl.archive.org/nudging#impliesPolicy"/>
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#Policy"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.archive.org/nudging#addressesIssue -->
 
     <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#addressesIssue">
+        <owl:inverseOf rdf:resource="https://purl.archive.org/nudging#isAddressedInPaper"/>
         <rdfs:domain rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
         <rdfs:range rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
     </owl:ObjectProperty>
@@ -392,6 +443,15 @@
     <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#isAchievedThroughPlan">
         <rdfs:domain rdf:resource="https://purl.archive.org/nudging#PoliticalAction"/>
         <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.archive.org/nudging#isAddressedInPaper -->
+
+    <owl:ObjectProperty rdf:about="https://purl.archive.org/nudging#isAddressedInPaper">
+        <rdfs:domain rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
+        <rdfs:range rdf:resource="https://purl.archive.org/nudging#AcademicPaper"/>
     </owl:ObjectProperty>
     
 
@@ -1239,46 +1299,6 @@
     
 
 
-    <!-- https://purl.archive.org/nudging#average_income -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#average_income">
-        <rdf:type rdf:resource="https://purl.archive.org/nudging#DataCollection"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://purl.archive.org/nudging#climate_change -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#climate_change">
-        <rdf:type rdf:resource="https://purl.archive.org/nudging#SocialIssue"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://purl.archive.org/nudging#commuters -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#commuters">
-        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://purl.archive.org/nudging#company-government-conversation -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#company-government-conversation">
-        <rdfs:label xml:lang="en">conversation between companies and governement</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://purl.archive.org/nudging#cui-et-al -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#cui-et-al">
-        <rdfs:label xml:lang="en">cui, et al</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://purl.archive.org/nudging#equity_planning -->
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#equity_planning">
@@ -1287,42 +1307,10 @@
     
 
 
-    <!-- https://purl.archive.org/nudging#job_employees -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#job_employees">
-        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://purl.archive.org/nudging#low-income-commuters -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#low-income-commuters">
-        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://purl.archive.org/nudging#lower-commute-duration -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#lower-commute-duration">
-        <rdfs:label xml:lang="en">lower commute duration</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://purl.archive.org/nudging#public-transport-inequalities -->
 
     <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#public-transport-inequalities">
         <rdfs:label xml:lang="en">public transportation inequalities</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://purl.archive.org/nudging#urban_policy_makers -->
-
-    <owl:NamedIndividual rdf:about="https://purl.archive.org/nudging#urban_policy_makers">
-        <rdf:type rdf:resource="https://purl.archive.org/nudging#Stakeholder"/>
     </owl:NamedIndividual>
     
 
