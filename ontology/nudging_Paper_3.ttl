@@ -1,0 +1,272 @@
+@prefix : <http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/> .
+
+<http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127> rdf:type owl:Ontology ;
+                                                                            owl:imports <https://purl.archive.org/nudging/0.1> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/DOI
+:DOI rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/addressesIssue
+:addressesIssue rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/citesTheory
+:citesTheory rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/hasAuthor
+:hasAuthor rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/hasSubAction
+:hasSubAction rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/produces
+:produces rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/year
+:year rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#Demonstrates
+<https://purl.archive.org/nudging#Demonstrates> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#IsDemonstratedBy
+<https://purl.archive.org/nudging#IsDemonstratedBy> rdf:type owl:AnnotationProperty ;
+                                                    rdfs:domain <https://purl.archive.org/nudging#SocialIssue> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127#2014–2018_american_community_survey
+<http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127#2014–2018_american_community_survey> rdf:type owl:NamedIndividual ,
+                                                                                                                        <https://purl.archive.org/nudging#DataCollection> ;
+                                                                                                               rdfs:label "2014-2018 american community survey" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/USA_metropolitan_area_2000_census
+:USA_metropolitan_area_2000_census rdf:type owl:NamedIndividual ,
+                                            <https://purl.archive.org/nudging#DataCollection> ;
+                                   rdfs:label "USA metropolitan area 2000 census" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/absolute_wage_differences
+:absolute_wage_differences rdf:type owl:NamedIndividual ,
+                                    <https://purl.archive.org/nudging#Methodology> ;
+                           <https://purl.archive.org/nudging#reliesOnData> <http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127#2014–2018_american_community_survey> ,
+                                                                           :USA_metropolitan_area_2000_census ;
+                           rdfs:comment "Use of absolute wage differences to better capture the real disparities."@en ;
+                           rdfs:label "absolute wage differences" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/general_social_policy
+:general_social_policy rdf:type owl:NamedIndividual ,
+                                <https://purl.archive.org/nudging#SocialContext> ;
+                       <https://purl.archive.org/nudging#binds> <https://purl.archive.org/nudging#affordable_housing_near_job> ,
+                                                                <https://purl.archive.org/nudging#expanding_transportation_access> ,
+                                                                <https://purl.archive.org/nudging#job_distribution_metro_areas> ,
+                                                                <https://purl.archive.org/nudging#working_women_support> ;
+                       rdfs:label "general social policy" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127/two-step_regression_approach
+:two-step_regression_approach rdf:type owl:NamedIndividual ,
+                                       <https://purl.archive.org/nudging#Methodology> ;
+                              <https://purl.archive.org/nudging#reliesOnData> <http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-127#2014–2018_american_community_survey> ,
+                                                                              :USA_metropolitan_area_2000_census ;
+                              rdfs:comment "Two-step regression approach to analyze the relationship between urbanization (measured by changes in population density) and wage inequality"@en ;
+                              rdfs:label "two-step regression approach" .
+
+
+###  https://purl.archive.org/nudging#AAPI_workers
+<https://purl.archive.org/nudging#AAPI_workers> rdf:type owl:NamedIndividual ,
+                                                         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community> ;
+                                                rdfs:label "AAPI workers" .
+
+
+###  https://purl.archive.org/nudging#Maximilian_Buchholz
+<https://purl.archive.org/nudging#Maximilian_Buchholz> rdf:type owl:NamedIndividual ,
+                                                                <https://purl.archive.org/nudging#Author> ;
+                                                       rdfs:label "Maximilian Buchholz" .
+
+
+###  https://purl.archive.org/nudging#Urbanization_Increase_Inequality
+<https://purl.archive.org/nudging#Urbanization_Increase_Inequality> rdf:type owl:NamedIndividual ,
+                                                                             <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                                    <https://purl.archive.org/nudging#addressesIssue> <https://purl.archive.org/nudging#urbanization_intensifies_inequality> ;
+                                                                    <https://purl.archive.org/nudging#citesTheory> <https://purl.archive.org/nudging#urban_wage_premium> ;
+                                                                    <https://purl.archive.org/nudging#hasAuthor> <https://purl.archive.org/nudging#Maximilian_Buchholz> ;
+                                                                    <https://purl.archive.org/nudging#DOI> "https://doi.org/10.1080/07352166.2023.2252538"^^xsd:anyURI ;
+                                                                    <https://purl.archive.org/nudging#year> 2023 ;
+                                                                    rdfs:comment """Does Urbanization Increase Inequality? Race, Gender, and the Urban Wage Premium; 
+This study examines how population density impacts racial and gender wage gaps across U.S. cities, controlling for confounding factors. The study examines whether urban settings exacerbate wage gaps among different demographic groups, considering factors like education, occupation, and industry."""@en ;
+                                                                    rdfs:label "urbanization increase inequality" .
+
+
+###  https://purl.archive.org/nudging#affordable_housing_near_job
+<https://purl.archive.org/nudging#affordable_housing_near_job> rdf:type owl:NamedIndividual ,
+                                                                        <https://purl.archive.org/nudging#PoliticalAction> ;
+                                                               <https://purl.archive.org/nudging#bringsAbout> <https://purl.archive.org/nudging#public-transport-equality> ;
+                                                               <https://purl.archive.org/nudging#involvesStakeholder> <https://purl.archive.org/nudging#urban_policy_makers> ;
+                                                               rdfs:comment "Increasing affordable housing near job centers"@en ;
+                                                               rdfs:label "affordable housing near job" .
+
+
+###  https://purl.archive.org/nudging#afterschool_programs
+<https://purl.archive.org/nudging#afterschool_programs> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+                                                        rdfs:comment "Structured activities offered to students outside regular school hours that provide academic help"@en ;
+                                                        rdfs:label "afterschool programs" .
+
+
+###  https://purl.archive.org/nudging#basic_monocentric_city_model
+<https://purl.archive.org/nudging#basic_monocentric_city_model> rdf:type owl:NamedIndividual ,
+                                                                         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                                                rdfs:comment "Basic monocentric city model assumes that all employment is located at the central point (central business district, or CBD) and all households have one worker. Household equilibrium in the model includes the condition that the marginal cost and marginal benefit of commuting distance are equal; the cost of one more mile of commuting equals the saving on housing expenses."@en ;
+                                                                rdfs:label "basic monocentric city model" .
+
+
+###  https://purl.archive.org/nudging#black_workers
+<https://purl.archive.org/nudging#black_workers> rdf:type owl:NamedIndividual ,
+                                                          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community> ;
+                                                 rdfs:label "black workers" .
+
+
+###  https://purl.archive.org/nudging#commuters
+<https://purl.archive.org/nudging#commuters> rdf:type owl:NamedIndividual ,
+                                                      <https://purl.archive.org/nudging#Stakeholder> ;
+                                             rdfs:label "commuters" .
+
+
+###  https://purl.archive.org/nudging#expanding_transportation_access
+<https://purl.archive.org/nudging#expanding_transportation_access> rdf:type owl:NamedIndividual ,
+                                                                            <https://purl.archive.org/nudging#PoliticalAction> ;
+                                                                   <https://purl.archive.org/nudging#involvesStakeholder> <https://purl.archive.org/nudging#urban_policy_makers> ;
+                                                                   rdfs:comment "Expanding transportation access to mitigate commuting disparities"@en ;
+                                                                   rdfs:label "expanding transportation access" .
+
+
+###  https://purl.archive.org/nudging#household_residential_location_in_urban_areas
+<https://purl.archive.org/nudging#household_residential_location_in_urban_areas> rdf:type owl:NamedIndividual ,
+                                                                                          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                                                                 rdfs:comment "Basic theory of household residential location in urban areas: influenced by the tradeoff between commuting costs which increases and the price of housing which decreases with the distance from a central business district."@en ;
+                                                                                 rdfs:label "household residential location in urban areas" ;
+                                                                                 <https://purl.archive.org/nudging#Demonstrates> <https://purl.archive.org/nudging#urbanization_intensifies_inequality> .
+
+
+###  https://purl.archive.org/nudging#job_distribution_metro_areas
+<https://purl.archive.org/nudging#job_distribution_metro_areas> rdf:type owl:NamedIndividual ,
+                                                                         <https://purl.archive.org/nudging#PoliticalAction> ;
+                                                                rdfs:comment "Improving job distribution across metro areas" ;
+                                                                rdfs:label "job distribution in metro areas" .
+
+
+###  https://purl.archive.org/nudging#job_employees
+<https://purl.archive.org/nudging#job_employees> rdf:type owl:NamedIndividual ,
+                                                          <https://purl.archive.org/nudging#Stakeholder> ;
+                                                 rdfs:label "job employees" .
+
+
+###  https://purl.archive.org/nudging#latinx_workers
+<https://purl.archive.org/nudging#latinx_workers> rdf:type owl:NamedIndividual ,
+                                                           <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community> ;
+                                                  rdfs:label "latinx workers" .
+
+
+###  https://purl.archive.org/nudging#low-income-commuters
+<https://purl.archive.org/nudging#low-income-commuters> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+                                                        rdfs:label "low-income commuters" .
+
+
+###  https://purl.archive.org/nudging#public-transport-equality
+<https://purl.archive.org/nudging#public-transport-equality> rdf:type owl:NamedIndividual ,
+                                                                      <https://purl.archive.org/nudging#SocialChange> ;
+                                                             rdfs:label "public trasport equality" .
+
+
+###  https://purl.archive.org/nudging#universal_pre-K
+<https://purl.archive.org/nudging#universal_pre-K> rdf:type owl:NamedIndividual ,
+                                                            <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+                                                   rdfs:comment "Educational program between preschool and kindergarten that prepares children for formal schooling"@en ;
+                                                   rdfs:label "universal pre-K" .
+
+
+###  https://purl.archive.org/nudging#urban_policy_makers
+<https://purl.archive.org/nudging#urban_policy_makers> rdf:type owl:NamedIndividual ,
+                                                                <https://purl.archive.org/nudging#Stakeholder> ;
+                                                       rdfs:label "urban policy makers" .
+
+
+###  https://purl.archive.org/nudging#urban_wage_premium
+<https://purl.archive.org/nudging#urban_wage_premium> rdf:type owl:NamedIndividual ,
+                                                               <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                                      rdfs:comment "In high-income countries, researchers have consistently documented a strong positive relationship between a city-region’s density and size, and its average income level. A nominal wage increase workers experience when located in more urbanized areas, and which is generally attributed to higher productivity in such locations. Research suggests this is not simply due to the selection of certain types of workers into more urbanized areas, but that workers match to jobs better and gain more valuable skills and experience in more urbanized areas. Research has focused especially on disparities across education levels. There is an increasing gap in the urban wage premium for college-educated and non-college-educated workers, leading some to question whether an urban wage premium continues to exist for non-college-educated workers."@en ;
+                                                      rdfs:label "urban wage premium" ;
+                                                      <https://purl.archive.org/nudging#Demonstrates> <https://purl.archive.org/nudging#urbanization_intensifies_inequality> .
+
+
+###  https://purl.archive.org/nudging#urbanization_intensifies_inequality
+<https://purl.archive.org/nudging#urbanization_intensifies_inequality> rdf:type owl:NamedIndividual ,
+                                                                                <https://purl.archive.org/nudging#SocialIssue> ;
+                                                                       <https://purl.archive.org/nudging#impacts> <https://purl.archive.org/nudging#AAPI_workers> ,
+                                                                                                                  <https://purl.archive.org/nudging#black_workers> ,
+                                                                                                                  <https://purl.archive.org/nudging#latinx_workers> ,
+                                                                                                                  <https://purl.archive.org/nudging#low-income-commuters> ,
+                                                                                                                  <https://purl.archive.org/nudging#women> ;
+                                                                       rdfs:label "urbanization intensifies inequality" .
+
+
+###  https://purl.archive.org/nudging#wages_decline_with_distance
+<https://purl.archive.org/nudging#wages_decline_with_distance> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                                               rdfs:comment "Research on urban wage gradients shows that wages decline with distance to the central business district because the savings in commuting costs for workers employed in the Central Business District increase with distance."@en ;
+                                                               rdfs:label "wages decline with distance" ;
+                                                               <https://purl.archive.org/nudging#Demonstrates> <https://purl.archive.org/nudging#urbanization_intensifies_inequality> .
+
+
+###  https://purl.archive.org/nudging#white_workers
+<https://purl.archive.org/nudging#white_workers> rdf:type owl:NamedIndividual ,
+                                                          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community> ;
+                                                 rdfs:label "white workers" .
+
+
+###  https://purl.archive.org/nudging#womens_shorter_commuting_time
+<https://purl.archive.org/nudging#womens_shorter_commuting_time> rdf:type owl:NamedIndividual ,
+                                                                          <https://purl.archive.org/nudging#SocialChange> ;
+                                                                 rdfs:label "whomen's shorter commuting time" .
+
+
+###  https://purl.archive.org/nudging#working-age_adults
+<https://purl.archive.org/nudging#working-age_adults> rdf:type owl:NamedIndividual ,
+                                                               <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+                                                      rdfs:label "working-age adults" .
+
+
+###  https://purl.archive.org/nudging#working_women_support
+<https://purl.archive.org/nudging#working_women_support> rdf:type owl:NamedIndividual ,
+                                                                  <https://purl.archive.org/nudging#PoliticalAction> ;
+                                                         <https://purl.archive.org/nudging#bringsAbout> <https://purl.archive.org/nudging#womens_shorter_commuting_time> ;
+                                                         <https://purl.archive.org/nudging#isAchievedThroughPlan> <https://purl.archive.org/nudging#afterschool_programs> ,
+                                                                                                                  <https://purl.archive.org/nudging#universal_pre-K> ;
+                                                         rdfs:comment "All the actions to support working women so that they benefit from urbanization"@en ;
+                                                         rdfs:label "working women support" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

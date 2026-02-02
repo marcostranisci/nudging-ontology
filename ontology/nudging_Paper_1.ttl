@@ -1,0 +1,512 @@
+@prefix : <http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/> .
+
+<http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125> rdf:type owl:Ontology ;
+                                                                            owl:imports <https://purl.archive.org/nudging/0.1> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/DOI
+:DOI rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/addressesIssue
+:addressesIssue rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/belongsTo
+:belongsTo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/binds
+:binds rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/bringsAbout
+:bringsAbout rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/challenges
+:challenges rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/citesTheory
+:citesTheory rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/emergesFrom
+:emergesFrom rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/hasAuthor
+:hasAuthor rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/hasContext
+:hasContext rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/hinders
+:hinders rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/involvesStakeholder
+:involvesStakeholder rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/produces
+:produces rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/references
+:references rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/reliesOnData
+:reliesOnData rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/reliesOnTheory
+:reliesOnTheory rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/usesMethodology
+:usesMethodology rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/year
+:year rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#DOI
+<https://purl.archive.org/nudging#DOI> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#addressesIssue
+<https://purl.archive.org/nudging#addressesIssue> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#binds
+<https://purl.archive.org/nudging#binds> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#bringsAbout
+<https://purl.archive.org/nudging#bringsAbout> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#challenges
+<https://purl.archive.org/nudging#challenges> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#citesTheory
+<https://purl.archive.org/nudging#citesTheory> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#emergesFrom
+<https://purl.archive.org/nudging#emergesFrom> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#hasAuthor
+<https://purl.archive.org/nudging#hasAuthor> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#hinders
+<https://purl.archive.org/nudging#hinders> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#involvesStakeholder
+<https://purl.archive.org/nudging#involvesStakeholder> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#references
+<https://purl.archive.org/nudging#references> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#reliesOnData
+<https://purl.archive.org/nudging#reliesOnData> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#reliesOnTheory
+<https://purl.archive.org/nudging#reliesOnTheory> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#usesMethodology
+<https://purl.archive.org/nudging#usesMethodology> rdf:type owl:AnnotationProperty .
+
+
+###  https://purl.archive.org/nudging#year
+<https://purl.archive.org/nudging#year> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/IsChallengedBy
+:IsChallengedBy rdf:type owl:ObjectProperty ;
+                owl:inverseOf <https://purl.archive.org/nudging#challenges> ;
+                rdfs:domain <https://purl.archive.org/nudging#SocialIssue> ;
+                rdfs:range <https://purl.archive.org/nudging#PoliticalAction> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#AcademicPaper
+<https://purl.archive.org/nudging#AcademicPaper> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#Author
+<https://purl.archive.org/nudging#Author> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#DataCollection
+<https://purl.archive.org/nudging#DataCollection> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#Explanation
+<https://purl.archive.org/nudging#Explanation> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#Methodology
+<https://purl.archive.org/nudging#Methodology> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#NationalPolicy
+<https://purl.archive.org/nudging#NationalPolicy> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#PoliticalAction
+<https://purl.archive.org/nudging#PoliticalAction> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#SocialChange
+<https://purl.archive.org/nudging#SocialChange> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#SocialIssue
+<https://purl.archive.org/nudging#SocialIssue> rdf:type owl:Class .
+
+
+###  https://purl.archive.org/nudging#Stakeholder
+<https://purl.archive.org/nudging#Stakeholder> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-125/South_Korea_gender_inequality
+:South_Korea_gender_inequality rdf:type owl:NamedIndividual ,
+                                        <https://purl.archive.org/nudging#SocialContext> ;
+                               rdfs:label "south korea gender inequality" .
+
+
+###  https://purl.archive.org/nudging#A_heteroscedasticity-consistent_covariance_matrix_estimator
+<https://purl.archive.org/nudging#A_heteroscedasticity-consistent_covariance_matrix_estimator> rdf:type owl:NamedIndividual ,
+                                                                                                        <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                                                               rdfs:comment """White, H., 1980. A heteroscedasticity-consistent covariance matrix estimator and a direct
+test for heteroscedasticity. Econometrica 48, 817–838."""@en ;
+                                                                                               rdfs:label "A heteroscedasticity-consistent covariance matrix estimator" .
+
+
+###  https://purl.archive.org/nudging#A_model_of_residential_location_choice_and_commuting
+<https://purl.archive.org/nudging#A_model_of_residential_location_choice_and_commuting> rdf:type owl:NamedIndividual ,
+                                                                                                 <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                                                        rdfs:comment """White, M., 1977. A model of residential location choice and commuting by men and
+women. J. Reg. Sci. 17, 41–52."""@en ;
+                                                                                        rdfs:label "A model of residential location choice and commuting" .
+
+
+###  https://purl.archive.org/nudging#Bun_Song_Lee
+<https://purl.archive.org/nudging#Bun_Song_Lee> rdf:type owl:NamedIndividual ,
+                                                         <https://purl.archive.org/nudging#Author> ;
+                                                rdfs:label "Bun Song Lee" .
+
+
+###  https://purl.archive.org/nudging#Cities_and_Housing
+<https://purl.archive.org/nudging#Cities_and_Housing> rdf:type owl:NamedIndividual ,
+                                                               <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                      rdfs:comment "Muth, R., 1969. Cities and Housing. University of Chicago Press, Chicago."@en ;
+                                                      rdfs:label "cities and housing" .
+
+
+###  https://purl.archive.org/nudging#CommutingTimeDecisions
+<https://purl.archive.org/nudging#CommutingTimeDecisions> rdf:type owl:NamedIndividual ,
+                                                                   <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                          <https://purl.archive.org/nudging#addressesIssue> <https://purl.archive.org/nudging#married_women_commuting_restrictions> ;
+                                                          <https://purl.archive.org/nudging#citesTheory> <https://purl.archive.org/nudging#basic_monocentric_city_model> ,
+                                                                                                         <https://purl.archive.org/nudging#household_residential_location_in_urban_areas> ,
+                                                                                                         <https://purl.archive.org/nudging#wages_decline_with_distance> ;
+                                                          <https://purl.archive.org/nudging#hasAuthor> <https://purl.archive.org/nudging#Bun_Song_Lee> ,
+                                                                                                       <https://purl.archive.org/nudging#John_F._McDonald> ,
+                                                                                                       <https://purl.archive.org/nudging#Sung_Hyo_Hong> ;
+                                                          <https://purl.archive.org/nudging#involvesStakeholder> <https://purl.archive.org/nudging#commuters> ,
+                                                                                                                 <https://purl.archive.org/nudging#couples> ,
+                                                                                                                 <https://purl.archive.org/nudging#job_employees> ,
+                                                                                                                 <https://purl.archive.org/nudging#urban_policy_makers> ,
+                                                                                                                 <https://purl.archive.org/nudging#women> ,
+                                                                                                                 <https://purl.archive.org/nudging#working-age_adults> ;
+                                                          <https://purl.archive.org/nudging#references> <https://purl.archive.org/nudging#A_heteroscedasticity-consistent_covariance_matrix_estimator> ,
+                                                                                                        <https://purl.archive.org/nudging#A_model_of_residential_location_choice_and_commuting> ,
+                                                                                                        <https://purl.archive.org/nudging#Cities_and_Housing> ,
+                                                                                                        <https://purl.archive.org/nudging#Determinants_of_commuting_time_and_distance_Seoul> ,
+                                                                                                        <https://purl.archive.org/nudging#Income_and_urban_residence_analysis_of_consumer_demand> ,
+                                                                                                        <https://purl.archive.org/nudging#Location_and_Land_Use> ,
+                                                                                                        <https://purl.archive.org/nudging#Sex_differences_in_urban_commuting_patterns> ;
+                                                          <https://purl.archive.org/nudging#usesMethodology> <https://purl.archive.org/nudging#2010_Korean_Population_and_Housing_census> ;
+                                                          :DOI "https://doi.org/10.1016/j.regsciurbeco.2018.01.010"^^xsd:anyURI ;
+                                                          :addressesIssue <https://purl.archive.org/nudging#married_women_commuting_restrictions> ;
+                                                          :citesTheory <https://purl.archive.org/nudging#basic_monocentric_city_model> ,
+                                                                       <https://purl.archive.org/nudging#household_residential_location_in_urban_areas> ,
+                                                                       <https://purl.archive.org/nudging#wages_decline_with_distance> ;
+                                                          :hasAuthor <https://purl.archive.org/nudging#Bun_Song_Lee> ,
+                                                                     <https://purl.archive.org/nudging#John_F._McDonald> ,
+                                                                     <https://purl.archive.org/nudging#Sung_Hyo_Hong> ;
+                                                          :involvesStakeholder <https://purl.archive.org/nudging#commuters> ,
+                                                                               <https://purl.archive.org/nudging#couples> ,
+                                                                               <https://purl.archive.org/nudging#job_employees> ,
+                                                                               <https://purl.archive.org/nudging#urban_policy_makers> ,
+                                                                               <https://purl.archive.org/nudging#women> ,
+                                                                               <https://purl.archive.org/nudging#working-age_adults> ;
+                                                          :references <https://purl.archive.org/nudging#A_heteroscedasticity-consistent_covariance_matrix_estimator> ,
+                                                                      <https://purl.archive.org/nudging#A_model_of_residential_location_choice_and_commuting> ,
+                                                                      <https://purl.archive.org/nudging#Cities_and_Housing> ,
+                                                                      <https://purl.archive.org/nudging#Determinants_of_commuting_time_and_distance_Seoul> ,
+                                                                      <https://purl.archive.org/nudging#Income_and_urban_residence_analysis_of_consumer_demand> ,
+                                                                      <https://purl.archive.org/nudging#Location_and_Land_Use> ,
+                                                                      <https://purl.archive.org/nudging#Sex_differences_in_urban_commuting_patterns> ;
+                                                          :usesMethodology <https://purl.archive.org/nudging#2010_Korean_Population_and_Housing_census> ;
+                                                          :year 2018 ;
+                                                          rdfs:comment "\"Commuting Time Decisions for Two-Worker Households in Korea\"" ;
+                                                          rdfs:label "commuting time decisions" ;
+                                                          <https://purl.archive.org/nudging#DOI> "https://doi.org/10.1016/j.regsciurbeco.2018.01.010"^^xsd:anyURI ;
+                                                          <https://purl.archive.org/nudging#year> 2018 .
+
+
+###  https://purl.archive.org/nudging#Determinants_of_commuting_time_and_distance_Seoul
+<https://purl.archive.org/nudging#Determinants_of_commuting_time_and_distance_Seoul> rdf:type owl:NamedIndividual ,
+                                                                                              <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                                                     rdfs:comment """Determinants of commuting time and distance for Seoul
+residents: the impact of family status on the commuting of women. Urban Stud. 40 (7), 1283–1302."""@en ;
+                                                                                     rdfs:label "determinants of commuting time and distance Seoul" .
+
+
+###  https://purl.archive.org/nudging#Income_and_urban_residence_analysis_of_consumer_demand
+<https://purl.archive.org/nudging#Income_and_urban_residence_analysis_of_consumer_demand> rdf:type owl:NamedIndividual ,
+                                                                                                   <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                                                          rdfs:comment """Wheaton, W., 1977. Income and urban residence: an analysis of consumer demand for
+location. Am. Econ. Rev. 67 (4), 620–631."""@en ;
+                                                                                          rdfs:label "income and urban residence: an analysis of consumer demand" .
+
+
+###  https://purl.archive.org/nudging#John_F._McDonald
+<https://purl.archive.org/nudging#John_F._McDonald> rdf:type owl:NamedIndividual ,
+                                                             <https://purl.archive.org/nudging#Author> ;
+                                                    rdfs:label "John F. McDonald" .
+
+
+###  https://purl.archive.org/nudging#Korean_commuting_data_by_gender
+<https://purl.archive.org/nudging#Korean_commuting_data_by_gender> rdf:type owl:NamedIndividual ,
+                                                                            <https://purl.archive.org/nudging#DataCollection> ;
+                                                                   rdfs:label "korean commuting data by gender" .
+
+
+###  https://purl.archive.org/nudging#Korean_gender_pay_gap
+<https://purl.archive.org/nudging#Korean_gender_pay_gap> rdf:type owl:NamedIndividual ,
+                                                                  <https://purl.archive.org/nudging#Explanation> ;
+                                                         <https://purl.archive.org/nudging#hasContext> :South_Korea_gender_inequality ;
+                                                         rdfs:label "korean gender pay gap" .
+
+
+###  https://purl.archive.org/nudging#Korean_job_laws
+<https://purl.archive.org/nudging#Korean_job_laws> rdf:type owl:NamedIndividual ,
+                                                            <https://purl.archive.org/nudging#NationalPolicy> ;
+                                                   <https://purl.archive.org/nudging#binds> <https://purl.archive.org/nudging#pay_gap_laws> ;
+                                                   :binds <https://purl.archive.org/nudging#pay_gap_laws> ;
+                                                   rdfs:label "korean job laws" .
+
+
+###  https://purl.archive.org/nudging#Korean_population_housing_data
+<https://purl.archive.org/nudging#Korean_population_housing_data> rdf:type owl:NamedIndividual ,
+                                                                           <https://purl.archive.org/nudging#DataCollection> ;
+                                                                  rdfs:label "korean population housing data" .
+
+
+###  https://purl.archive.org/nudging#Location_and_Land_Use
+<https://purl.archive.org/nudging#Location_and_Land_Use> rdf:type owl:NamedIndividual ,
+                                                                  <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                         rdfs:comment "Alonso, W., 1964. Location and Land Use. Harvard University Press, Cambridge, MA."@en ;
+                                                         rdfs:label "location and land use" .
+
+
+###  https://purl.archive.org/nudging#Sex_differences_in_urban_commuting_patterns
+<https://purl.archive.org/nudging#Sex_differences_in_urban_commuting_patterns> rdf:type owl:NamedIndividual ,
+                                                                                        <https://purl.archive.org/nudging#AcademicPaper> ;
+                                                                               rdfs:comment """White, M., 1986. Sex differences in urban commuting patterns. Am. Econ. Rev. 76 (2),
+368–372."""@en ;
+                                                                               rdfs:label "sex differences in urban commuting patterns" .
+
+
+###  https://purl.archive.org/nudging#Sung_Hyo_Hong
+<https://purl.archive.org/nudging#Sung_Hyo_Hong> rdf:type owl:NamedIndividual ,
+                                                          <https://purl.archive.org/nudging#Author> ;
+                                                 rdfs:label "Sung Hyo Hong" .
+
+
+###  https://purl.archive.org/nudging#basic_monocentric_city_model
+<https://purl.archive.org/nudging#basic_monocentric_city_model> rdf:type owl:NamedIndividual ,
+                                                                         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                                                rdfs:comment "Basic monocentric city model assumes that all employment is located at the central point (central business district, or CBD) and all households have one worker. Household equilibrium in the model includes the condition that the marginal cost and marginal benefit of commuting distance are equal; the cost of one more mile of commuting equals the saving on housing expenses."@en ;
+                                                                rdfs:label "basic monocentric city model" .
+
+
+###  https://purl.archive.org/nudging#commuters
+<https://purl.archive.org/nudging#commuters> rdf:type owl:NamedIndividual ,
+                                                      <https://purl.archive.org/nudging#Stakeholder> ;
+                                             rdfs:label "commuters" .
+
+
+###  https://purl.archive.org/nudging#couples
+<https://purl.archive.org/nudging#couples> rdf:type owl:NamedIndividual ,
+                                                    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+                                           rdfs:label "couples" .
+
+
+###  https://purl.archive.org/nudging#cui-et-al
+<https://purl.archive.org/nudging#cui-et-al> rdf:type owl:NamedIndividual ;
+                                             rdfs:label "cui, et al"@en .
+
+
+###  https://purl.archive.org/nudging#high-income-commuters
+<https://purl.archive.org/nudging#high-income-commuters> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+                                                         rdfs:label "high-income commuters" .
+
+
+###  https://purl.archive.org/nudging#household_residential_location_in_urban_areas
+<https://purl.archive.org/nudging#household_residential_location_in_urban_areas> rdf:type owl:NamedIndividual ,
+                                                                                          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                                                                 rdfs:comment "Basic theory of household residential location in urban areas: influenced by the tradeoff between commuting costs which increases and the price of housing which decreases with the distance from a central business district."@en ;
+                                                                                 rdfs:label "household residential location in urban areas" .
+
+
+###  https://purl.archive.org/nudging#job_employees
+<https://purl.archive.org/nudging#job_employees> rdf:type owl:NamedIndividual ,
+                                                          <https://purl.archive.org/nudging#Stakeholder> ;
+                                                 rdfs:label "job employees" .
+
+
+###  https://purl.archive.org/nudging#low-income-commuters
+<https://purl.archive.org/nudging#low-income-commuters> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+                                                        rdfs:label "low-income commuters" .
+
+
+###  https://purl.archive.org/nudging#lower-commute-duration
+<https://purl.archive.org/nudging#lower-commute-duration> rdf:type owl:NamedIndividual ;
+                                                          rdfs:label "lower commute duration"@en .
+
+
+###  https://purl.archive.org/nudging#married_women_commuting_restrictions
+<https://purl.archive.org/nudging#married_women_commuting_restrictions> rdf:type owl:NamedIndividual ,
+                                                                                 <https://purl.archive.org/nudging#SocialIssue> ;
+                                                                        <https://purl.archive.org/nudging#emergesFrom> <https://purl.archive.org/nudging#Korean_gender_pay_gap> ;
+                                                                        :emergesFrom <https://purl.archive.org/nudging#Korean_gender_pay_gap> ;
+                                                                        rdfs:comment "Married women face geographic restrictions in their market work activities. There are social costs of mismatch between education levels and work activities for women. (92.25 % of the households of working couples have the male as the higher predicted wage commuter and the lower predicted wage commuter is female)"@en ;
+                                                                        rdfs:label "married women commuting restrictions" .
+
+
+###  https://purl.archive.org/nudging#nearer-low-income-jobs
+<https://purl.archive.org/nudging#nearer-low-income-jobs> rdf:type owl:NamedIndividual ,
+                                                                   <https://purl.archive.org/nudging#PoliticalAction> ;
+                                                          <https://purl.archive.org/nudging#bringsAbout> <https://purl.archive.org/nudging#lower-commute-duration> ,
+                                                                                                         <https://purl.archive.org/nudging#womens_shorter_commuting_time> ;
+                                                          <https://purl.archive.org/nudging#challenges> <https://purl.archive.org/nudging#married_women_commuting_restrictions> ;
+                                                          <https://purl.archive.org/nudging#involvesStakeholder> <https://purl.archive.org/nudging#urban_policy_makers> ;
+                                                          <https://purl.archive.org/nudging#reliesOnData> <https://purl.archive.org/nudging#cui-et-al> ;
+                                                          :produces <https://purl.archive.org/nudging#lower-commute-duration> ;
+                                                          :reliesOnData <https://purl.archive.org/nudging#cui-et-al> ;
+                                                          rdfs:comment "bring lowincome jobs closer to low-income workers"@en ;
+                                                          rdfs:label "nearer low-income jobs"@en .
+
+
+###  https://purl.archive.org/nudging#pay_gap_laws
+<https://purl.archive.org/nudging#pay_gap_laws> rdf:type owl:NamedIndividual ,
+                                                         <https://purl.archive.org/nudging#PoliticalAction> ;
+                                                <https://purl.archive.org/nudging#bringsAbout> <https://purl.archive.org/nudging#womens_shorter_commuting_time> ;
+                                                <https://purl.archive.org/nudging#challenges> <https://purl.archive.org/nudging#married_women_commuting_restrictions> ;
+                                                <https://purl.archive.org/nudging#involvesStakeholder> <https://purl.archive.org/nudging#urban_policy_makers> ;
+                                                <https://purl.archive.org/nudging#reliesOnData> <https://purl.archive.org/nudging#Korean_commuting_data_by_gender> ,
+                                                                                                <https://purl.archive.org/nudging#Korean_population_housing_data> ;
+                                                rdfs:label "pay gap laws" .
+
+
+###  https://purl.archive.org/nudging#public-transport-inequalities
+<https://purl.archive.org/nudging#public-transport-inequalities> rdf:type owl:NamedIndividual ;
+                                                                 rdfs:label "public transportation inequalities"@en .
+
+
+###  https://purl.archive.org/nudging#urban_policy_makers
+<https://purl.archive.org/nudging#urban_policy_makers> rdf:type owl:NamedIndividual ,
+                                                                <https://purl.archive.org/nudging#Stakeholder> ;
+                                                       rdfs:label "urban policy makers" .
+
+
+###  https://purl.archive.org/nudging#wages_decline_with_distance
+<https://purl.archive.org/nudging#wages_decline_with_distance> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                                               rdfs:comment "Research on urban wage gradients shows that wages decline with distance to the central business district because the savings in commuting costs for workers employed in the Central Business District increase with distance."@en ;
+                                                               rdfs:label "wages decline with distance" .
+
+
+###  https://purl.archive.org/nudging#women
+<https://purl.archive.org/nudging#women> rdf:type owl:NamedIndividual ,
+                                                  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> .
+
+
+###  https://purl.archive.org/nudging#womens_shorter_commuting_time
+<https://purl.archive.org/nudging#womens_shorter_commuting_time> rdf:type owl:NamedIndividual ,
+                                                                          <https://purl.archive.org/nudging#SocialChange> ;
+                                                                 rdfs:label "women's shorther commuting time" .
+
+
+###  https://purl.archive.org/nudging#working-age_adults
+<https://purl.archive.org/nudging#working-age_adults> rdf:type owl:NamedIndividual ,
+                                                               <https://purl.archive.org/nudging#Stakeholder> ;
+                                                      rdfs:label "working-age adults" .
+
+
+###  https://purl.archive.org/nudging#2010_Korean_Population_and_Housing_census
+<https://purl.archive.org/nudging#2010_Korean_Population_and_Housing_census> rdf:type owl:NamedIndividual ,
+                                                                                      <https://purl.archive.org/nudging#Methodology> ;
+                                                                             <https://purl.archive.org/nudging#reliesOnData> <https://purl.archive.org/nudging#Korean_commuting_data_by_gender> ,
+                                                                                                                             <https://purl.archive.org/nudging#Korean_population_housing_data> ;
+                                                                             rdfs:comment "Use the 2010 Korean Population and Housing census 2 percent sample data from Korean Statistics Office. Wage rate was extracted from proxy variables (2009 Industry-Occupation Employment Structure Survey by Korean Employment Information Institute).  Basic regression analysis for commuting times (measured in minutes) as a function of the two predicted wages and modal choices."@en ;
+                                                                             rdfs:label "2010 Korean Population and Housing census" .
+
+
+###  https://purl.archive.org/nudging#3D_socioeconomics
+<https://purl.archive.org/nudging#3D_socioeconomics> rdf:type owl:NamedIndividual ,
+                                                              <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                                     rdfs:comment "Build Environment has originally been defined through the famous 3Ds of built environment: Density, Diversity, and Design, initially coined 1997 and since widely used in North American studies. 3D has grown to 5D with the addition of Destination accessibility and Distance to transit. Trip lengths are primarily a function of the Build Environment and secondarily of socioeconomics (SEC). Mode choices depend on both but probably more on SEC."@en ;
+                                                     rdfs:label "3D socioeconomics" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

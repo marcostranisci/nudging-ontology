@@ -1,0 +1,286 @@
+@prefix : <http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nudging: <https://purl.archive.org/nudging#> .
+@base <http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/> .
+
+<http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120> rdf:type owl:Ontology ;
+                                                                            owl:imports <https://purl.archive.org/nudging/0.1> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://purl.archive.org/nudging#Demonstrates
+nudging:Demonstrates rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> rdfs:comment "Perception is not necessarly actual crime; there is a close correspondence between perceived and actual crime, but a study reports substantial variation in perceptions of neighborhood crime controlling for official measures of crime rates; perceptions of crime more strongly predict the intention to move out of a neighborhood than do official crime rate measures. The perception of crime can depend on neighborhood racial composition."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Anderson_1990
+:Anderson_1990 rdf:type owl:NamedIndividual ,
+                        nudging:AcademicPaper ;
+               rdfs:label "Anderson 1990" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Brewer_1979
+:Brewer_1979 rdf:type owl:NamedIndividual ,
+                      nudging:AcademicPaper ;
+             rdfs:label "Brewer 1979" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Devah_Pager
+:Devah_Pager rdf:type owl:NamedIndividual ,
+                      nudging:Author ;
+             rdfs:label "Devah Pager" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Devine_and_Elliot_1995
+:Devine_and_Elliot_1995 rdf:type owl:NamedIndividual ,
+                                 nudging:AcademicPaper ;
+                        rdfs:label "Devine and Elliot 1995" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Farley_and_Frey_1994
+:Farley_and_Frey_1994 rdf:type owl:NamedIndividual ,
+                               nudging:AcademicPaper ;
+                      rdfs:label "Farley and Frey 1994" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Harris_1999
+:Harris_1999 rdf:type owl:NamedIndividual ,
+                      nudging:AcademicPaper ;
+             rdfs:label "Harris 1999" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Lincoln_Quillian
+:Lincoln_Quillian rdf:type owl:NamedIndividual ,
+                           nudging:Author ;
+                  rdfs:label "Lincoln Quillian" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Massey_and_Denton_1993
+:Massey_and_Denton_1993 rdf:type owl:NamedIndividual ,
+                                 nudging:AcademicPaper ;
+                        rdfs:label "Massey and Denton 1993" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Massey_et_al_1994
+:Massey_et_al_1994 rdf:type owl:NamedIndividual ,
+                            nudging:AcademicPaper ;
+                   rdfs:label "Massey et al 1994" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Racial_Stereotypes_Evaluations_Neighborhood_Crime
+:Racial_Stereotypes_Evaluations_Neighborhood_Crime rdf:type owl:NamedIndividual ,
+                                                            nudging:AcademicPaper ;
+                                                   nudging:addressesIssue :african-americans_segregation_in_neighbourhoods ;
+                                                   nudging:citesTheory :neighboor_perception_of_crime ,
+                                                                       :stereotype_resilience ,
+                                                                       :stereotypes_and_group_perceptions ,
+                                                                       :stereotypical_bias ;
+                                                   nudging:hasAuthor :Devah_Pager ,
+                                                                     :Lincoln_Quillian ;
+                                                   nudging:involvesStakeholder :house_policy_makers ,
+                                                                               :neighborhood_associations ;
+                                                   nudging:references :Anderson_1990 ,
+                                                                      :Brewer_1979 ,
+                                                                      :Devine_and_Elliot_1995 ,
+                                                                      :Farley_and_Frey_1994 ,
+                                                                      :Harris_1999 ,
+                                                                      :Massey_and_Denton_1993 ,
+                                                                      :Massey_et_al_1994 ,
+                                                                      :Rothbart_et_al_1979 ,
+                                                                      :Sagar_and_Schofield_1980 ,
+                                                                      :Schelling_1971 ,
+                                                                      :South_and_Crowder_1998 ,
+                                                                      :Taub_Taylor_and_Dunham_1984 ;
+                                                   nudging:usesMethodology :multilevel_modeling_on_chicago ,
+                                                                           :ordered_logit_models_for_seattle_and_baltimore ;
+                                                   nudging:DOI "https://www.jstor.org/stable/10.1086/338938"^^xsd:anyURI ;
+                                                   nudging:year 2001 ;
+                                                   rdfs:comment """How neighborhood racial composition affects residents' perceptions of crime.
+(1) how the presence of Black residents affects perceptions of crime,
+(2) whether this effect is due to actual crime rates or other neighborhood characteristics, 
+(3) whether perceptions differ by the race of the observer"""@en ;
+                                                   rdfs:label "racial stereotypes evaluations neighborhood crime" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Rothbart_et_al_1979
+:Rothbart_et_al_1979 rdf:type owl:NamedIndividual ,
+                              nudging:AcademicPaper ;
+                     rdfs:label "rothbart et al 1979" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Sagar_and_Schofield_1980
+:Sagar_and_Schofield_1980 rdf:type owl:NamedIndividual ,
+                                   nudging:AcademicPaper ;
+                          rdfs:label "Sagar and Schofield 1980" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Schelling_1971
+:Schelling_1971 rdf:type owl:NamedIndividual ,
+                         nudging:AcademicPaper ;
+                rdfs:label "Schelling 1971" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/South_and_Crowder_1998
+:South_and_Crowder_1998 rdf:type owl:NamedIndividual ,
+                                 nudging:AcademicPaper ;
+                        rdfs:label "South and Crowder 1998" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/Taub_Taylor_and_Dunham_1984
+:Taub_Taylor_and_Dunham_1984 rdf:type owl:NamedIndividual ,
+                                      nudging:AcademicPaper ;
+                             rdfs:label "Taub Taylor and Dunham 1984" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/address_racial_bias_in_crime_reporting
+:address_racial_bias_in_crime_reporting rdf:type owl:NamedIndividual ,
+                                                 nudging:PoliticalAction ;
+                                        nudging:bringsAbout :reduced_stereotype_based_neighborhood_evaluation ;
+                                        nudging:challenges :african-americans_segregation_in_neighbourhoods ;
+                                        rdfs:comment "Address racial bias in crime reporting and promote positive stories from minority communities."@en ;
+                                        rdfs:label "Address racial bias in crime reporting" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/african-americans_segregation_in_neighbourhoods
+:african-americans_segregation_in_neighbourhoods rdf:type owl:NamedIndividual ,
+                                                          nudging:SocialIssue ;
+                                                 rdfs:comment "African-Americans remain more segregated than any other racial or ethnic group and this residential isolation persists across all levels of socio economic attainment. White avoidance of neighborhoods with blacks are key processes that maintain high levels of racial segregation: could be because of racial aversion"@en ;
+                                                 rdfs:label "african american segregation in neighbourhoods" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/anti-bias_training_for_police
+:anti-bias_training_for_police rdf:type owl:NamedIndividual ,
+                                        nudging:PoliticalAction ;
+                               nudging:bringsAbout :reduced_stereotype_based_neighborhood_evaluation ;
+                               nudging:challenges :african-americans_segregation_in_neighbourhoods ;
+                               rdfs:comment "Implement anti-bias training for police and encourage community policing to build trust and reduce racialized fears of crime."@en ;
+                               rdfs:label "anti-bias training for police" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/census_data
+:census_data rdf:type owl:NamedIndividual ,
+                      nudging:DataCollection ;
+             rdfs:label "census data" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/criminal_justice_reform
+:criminal_justice_reform rdf:type owl:NamedIndividual ,
+                                  nudging:PoliticalAction ;
+                         nudging:bringsAbout :reduced_stereotype_based_neighborhood_evaluation ;
+                         nudging:challenges :african-americans_segregation_in_neighbourhoods ;
+                         nudging:includesDecisionMaker :lawmakers ;
+                         rdfs:comment "Reform sentencing policies that disproportionately affect minority communities and contribute to racialized perceptions of crime."@en ;
+                         rdfs:label "criminal justice reform" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/house_policy_makers
+:house_policy_makers rdf:type owl:NamedIndividual ,
+                              nudging:Stakeholder ;
+                     rdfs:label "house policy makers" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/lawmakers
+:lawmakers rdf:type owl:NamedIndividual ;
+           rdfs:label "lawmakers" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/multilevel_modeling_on_chicago
+:multilevel_modeling_on_chicago rdf:type owl:NamedIndividual ,
+                                         nudging:Methodology ;
+                                nudging:reliesOnData :census_data ;
+                                rdfs:label "multilevel modelling on chicago" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/neighboor_perception_of_crime
+:neighboor_perception_of_crime rdf:type owl:NamedIndividual ,
+                                        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                               rdfs:label "neighboor perception of crime" ;
+                               nudging:Demonstrates :african-americans_segregation_in_neighbourhoods .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/neighborhood_associations
+:neighborhood_associations rdf:type owl:NamedIndividual ,
+                                    nudging:Stakeholder ;
+                           rdfs:label "neighborhood associations" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/ordered_logit_models_for_seattle_and_baltimore
+:ordered_logit_models_for_seattle_and_baltimore rdf:type owl:NamedIndividual ,
+                                                         nudging:Methodology ;
+                                                nudging:reliesOnData :census_data ;
+                                                rdfs:label "ordered logit models for seattle and baltimore" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/providing_transparent_crime_data
+:providing_transparent_crime_data rdf:type owl:NamedIndividual ,
+                                           nudging:PoliticalAction ;
+                                  nudging:bringsAbout :reduced_stereotype_based_neighborhood_evaluation ;
+                                  nudging:challenges :african-americans_segregation_in_neighbourhoods ;
+                                  rdfs:comment "Provide transparent crime data to counteract misperceptions."@en ;
+                                  rdfs:label "providing transparent crime data" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/public_education_campaigns
+:public_education_campaigns rdf:type owl:NamedIndividual ,
+                                     nudging:PoliticalAction ;
+                            nudging:bringsAbout :reduced_stereotype_based_neighborhood_evaluation ;
+                            nudging:challenges :african-americans_segregation_in_neighbourhoods ;
+                            rdfs:comment "Launch public education campaigns to challenge crime misperceptions and reduce racial bias."@en ;
+                            rdfs:label "public education campaigns" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/reduced_stereotype_based_neighborhood_evaluation
+:reduced_stereotype_based_neighborhood_evaluation rdf:type owl:NamedIndividual ,
+                                                           nudging:SocialChange ;
+                                                  rdfs:label "reduced stereotype based neighborhood evaluation" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/social_services_and_nonprofits
+:social_services_and_nonprofits rdf:type owl:NamedIndividual ,
+                                         nudging:Stakeholder ;
+                                rdfs:label "social services and nonprofits" .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/stereotype_resilience
+:stereotype_resilience rdf:type owl:NamedIndividual ,
+                                <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                       rdfs:comment "People tend to notice and remember stereotype-consistent information while ignoring contradictory evidence. This reinforces racial biases in crime perception, leading to overestimations of Black criminality. Such biases likely extend beyond individuals, shaping perceptions of predominantly Black neighborhoods as inherently dangerous, regardless of actual crime rates."@en ;
+                       rdfs:label "stereotype resilience" ;
+                       nudging:Demonstrates :african-americans_segregation_in_neighbourhoods .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/stereotypes_and_group_perceptions
+:stereotypes_and_group_perceptions rdf:type owl:NamedIndividual ,
+                                            <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                                   rdfs:comment """- Some members of stereotyped groups internalize negative stereotypes. However, people tend to evaluate their own group more favorably .
+- Black residents may use more nuanced judgments about young Black men compared to White residents"""@en ;
+                                   rdfs:label "stereotypes and group perceptions" ;
+                                   nudging:Demonstrates :african-americans_segregation_in_neighbourhoods .
+
+
+###  http://www.semanticweb.org/monic/ontologies/2026/0/untitled-ontology-120/stereotypical_bias
+:stereotypical_bias rdf:type owl:NamedIndividual ,
+                             <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                    rdfs:comment "Survey respondents consistently rate blacks as more violence prone than any other American racial or ethnic group. The stereotype of blacks as criminals is widely known and is deeply embedded in the collective con- sciousness of Americans, irrespective of the level of prejudice or personal beliefs. In these theories, stereotypes arise from emotional needs to enhance or justify the position of one’s own racial group relative to other racial groups."@en ;
+                    rdfs:label "stereotypical bias" ;
+                    nudging:Demonstrates :african-americans_segregation_in_neighbourhoods .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,949 @@
+@prefix : <https://purl.archive.org/nudging#> .
+@prefix ndg: <https://purl.archive.org/nudging#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://purl.archive.org/nudging#> .
+
+<https://purl.archive.org/nudging> rdf:type owl:Ontology ;
+                                    owl:versionIRI <https://purl.archive.org/nudging/0.1> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:label "executes task" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart> rdf:type owl:ObjectProperty ;
+                                                                rdfs:label "has part" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:label "has participant" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:label "is setting for" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:label "is task defined in" .
+
+
+###  http://www.w3.org/2006/time#after
+<http://www.w3.org/2006/time#after> rdf:type owl:ObjectProperty ;
+                                    rdfs:label "time:after" .
+
+
+###  http://www.w3.org/2006/time#before
+<http://www.w3.org/2006/time#before> rdf:type owl:ObjectProperty ;
+                                     rdfs:label "time:before" .
+
+
+###  http://www.w3.org/2006/time#hasTime
+<http://www.w3.org/2006/time#hasTime> rdf:type owl:ObjectProperty ;
+                                      rdfs:label "time:hasTime" .
+
+
+###  https://purl.archive.org/nudging#achieves
+ndg:achieves rdf:type owl:ObjectProperty ;
+             owl:inverseOf ndg:isAchievedThroughPlan ;
+             rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+             rdfs:range ndg:PoliticalAction ;
+             rdfs:label "achieves" .
+
+
+###  https://purl.archive.org/nudging#addressesIssue
+ndg:addressesIssue rdf:type owl:ObjectProperty ;
+                   owl:inverseOf ndg:isAddressedInPaper ;
+                   rdfs:domain ndg:AcademicPaper ;
+                   rdfs:range ndg:SocialIssue ;
+                   rdfs:label "addressesIssue" .
+
+
+###  https://purl.archive.org/nudging#assess
+ndg:assess rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf ndg:nudgeBasedRelation ;
+           rdfs:domain ndg:EvaluationProcess ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( ndg:Nudge
+                                      ndg:SocialChange
+                                    )
+                      ] ;
+           rdfs:comment "the evaluation of the nudging strategy or of the social change"@en ;
+           rdfs:label "assess"@en .
+
+
+###  https://purl.archive.org/nudging#belongsTo
+ndg:belongsTo rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person> ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community>
+                                         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group>
+                                       )
+                         ] ;
+              rdfs:comment "the relation with a person and a series of groups and identities" ;
+              rdfs:label "belongs to"@en .
+
+
+###  https://purl.archive.org/nudging#binds
+ndg:binds rdf:type owl:ObjectProperty ;
+          owl:inverseOf ndg:isBoundBy ;
+          rdfs:domain ndg:Policy ;
+          rdfs:range ndg:PoliticalAction ;
+          rdfs:comment "the relation of binding between a policy and a political intervention"@en ;
+          rdfs:label "binds"@en .
+
+
+###  https://purl.archive.org/nudging#bringsAbout
+ndg:bringsAbout rdf:type owl:ObjectProperty ;
+                owl:inverseOf ndg:isBroughtAbout ;
+                rdfs:domain ndg:PoliticalAction ;
+                rdfs:range ndg:SocialChange ;
+                rdfs:label "brings about" .
+
+
+###  https://purl.archive.org/nudging#challenges
+ndg:challenges rdf:type owl:ObjectProperty ;
+               rdfs:domain ndg:PoliticalAction ;
+               rdfs:range ndg:SocialIssue ;
+               rdfs:comment "the relation between a political action and a social issue"@en ;
+               rdfs:label "challenges"@en .
+
+
+###  https://purl.archive.org/nudging#citesTheory
+ndg:citesTheory rdf:type owl:ObjectProperty ;
+                owl:inverseOf ndg:isCitedIn ;
+                rdfs:domain ndg:AcademicPaper ;
+                rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                rdfs:label "cites theory" .
+
+
+###  https://purl.archive.org/nudging#demonstrates
+ndg:demonstrates rdf:type owl:ObjectProperty ;
+                 owl:inverseOf ndg:isDemonstratedBy ;
+                 rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                 rdfs:range ndg:SocialIssue ;
+                 rdfs:label "demonstrates" .
+
+
+###  https://purl.archive.org/nudging#designedFrom
+ndg:designedFrom rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf ndg:nudgeBasedRelation ;
+                 rdfs:comment "The relation between the nudging strategy and the social change. Every nudging strategy must be defined starting from an expected social change"@en ;
+                 rdfs:label "designed from"@en .
+
+
+###  https://purl.archive.org/nudging#emergesFrom
+ndg:emergesFrom rdf:type owl:ObjectProperty ;
+                rdfs:domain ndg:SocialIssue ;
+                rdfs:range ndg:Explanation ;
+                rdfs:comment "Every social issue has an explanation"@en ;
+                rdfs:label "emerges from"@en .
+
+
+###  https://purl.archive.org/nudging#excecutesNudgingStrategy
+ndg:excecutesNudgingStrategy rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask> ;
+                             rdfs:range ndg:NudgingStrategy ;
+                             rdfs:comment "a nudge is an action that must execute at least one nudging strategy"@en ;
+                             rdfs:label "executes nudging strategy"@en .
+
+
+###  https://purl.archive.org/nudging#executesEvaluationTask
+ndg:executesEvaluationTask rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask> ;
+                           rdfs:domain ndg:EvaluationProcess ;
+                           rdfs:range ndg:EvaluationTask ;
+                           rdfs:label "execute evaluation task"@en .
+
+
+###  https://purl.archive.org/nudging#facilitates
+ndg:facilitates rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ndg:binds ;
+                rdfs:comment "a policy that facilitates the intervention"@en ;
+                rdfs:label "facilitates"@en .
+
+
+###  https://purl.archive.org/nudging#hasAuthor
+ndg:hasAuthor rdf:type owl:ObjectProperty ;
+              rdfs:domain ndg:AcademicPaper ;
+              rdfs:range ndg:Author ;
+              rdfs:comment "Relates an academic paper to its author" ;
+              rdfs:label "has author" .
+
+
+###  https://purl.archive.org/nudging#hasContext
+ndg:hasContext rdf:type owl:ObjectProperty ;
+               rdfs:range ndg:SocialContext ;
+               rdfs:label "has context"@en .
+
+
+###  https://purl.archive.org/nudging#hasDiscrict
+ndg:hasDiscrict rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf ndg:spatialRelation ;
+                rdfs:label "has district"@en .
+
+
+###  https://purl.archive.org/nudging#hasStreet
+ndg:hasStreet rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf ndg:spatialRelation ;
+              rdfs:label "has street"@en .
+
+
+###  https://purl.archive.org/nudging#hasSubAction
+ndg:hasSubAction rdf:type owl:ObjectProperty ;
+                 rdfs:domain ndg:PoliticalAction ;
+                 rdfs:range ndg:PoliticalAction ;
+                 rdfs:label "has sub action" .
+
+
+###  https://purl.archive.org/nudging#hasSubIssue
+ndg:hasSubIssue rdf:type owl:ObjectProperty ;
+                rdfs:domain ndg:SocialIssue ;
+                rdfs:range ndg:SocialIssue ;
+                rdfs:label "has sub issue" .
+
+
+###  https://purl.archive.org/nudging#hasSubPlan
+ndg:hasSubPlan rdf:type owl:ObjectProperty ;
+               rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+               rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+               rdfs:label "has sub plan" .
+
+
+###  https://purl.archive.org/nudging#hasSuburb
+ndg:hasSuburb rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf ndg:spatialRelation ;
+              rdfs:label "has suburb"@en .
+
+
+###  https://purl.archive.org/nudging#hinders
+ndg:hinders rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf ndg:binds ;
+            rdfs:comment "a policy that hinders the intervention"@en ;
+            rdfs:label "hinders"@en .
+
+
+###  https://purl.archive.org/nudging#impacts
+ndg:impacts rdf:type owl:ObjectProperty ;
+            rdfs:domain ndg:SocialIssue ;
+            rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent> ;
+            rdfs:label "impacts" .
+
+
+###  https://purl.archive.org/nudging#impliesPolicy
+ndg:impliesPolicy rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ndg:isImpliedInPaper ;
+                  rdfs:domain ndg:AcademicPaper ;
+                  rdfs:range ndg:Policy ;
+                  rdfs:label "implies policy" .
+
+
+###  https://purl.archive.org/nudging#includesBeneficiary
+ndg:includesBeneficiary rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                        rdfs:domain ndg:SocialIssue ;
+                        rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent> ;
+                        rdfs:label "includes beneficiary"@en .
+
+
+###  https://purl.archive.org/nudging#includesDecisionMaker
+ndg:includesDecisionMaker rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                          rdfs:domain ndg:SocialIssue ;
+                          rdfs:label "includes decision-maker"@en .
+
+
+###  https://purl.archive.org/nudging#involvesBeneficiary
+ndg:involvesBeneficiary rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> ;
+                        rdfs:domain ndg:Nudge ;
+                        rdfs:range [ rdf:type owl:Class ;
+                                     owl:unionOf ( <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent>
+                                                   <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person>
+                                                   <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent>
+                                                 )
+                                   ] ;
+                        rdfs:label "involves beneficiary" .
+
+
+###  https://purl.archive.org/nudging#involvesDecisionMaker
+ndg:involvesDecisionMaker rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> ;
+                          rdfs:domain ndg:Nudge ;
+                          rdfs:label "involves decision maker"@en .
+
+
+###  https://purl.archive.org/nudging#involvesStakeholder
+ndg:involvesStakeholder rdf:type owl:ObjectProperty ;
+                        rdfs:range ndg:Stakeholder ;
+                        rdfs:label "involves stakeholder" .
+
+
+###  https://purl.archive.org/nudging#isAchievedThroughPlan
+ndg:isAchievedThroughPlan rdf:type owl:ObjectProperty ;
+                          rdfs:domain ndg:PoliticalAction ;
+                          rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+                          rdfs:label "is achieved through plan" .
+
+
+###  https://purl.archive.org/nudging#isAddressedInPaper
+ndg:isAddressedInPaper rdf:type owl:ObjectProperty ;
+                       rdfs:domain ndg:SocialIssue ;
+                       rdfs:range ndg:AcademicPaper ;
+                       rdfs:label "is addressed in paper" .
+
+
+###  https://purl.archive.org/nudging#isBoundBy
+ndg:isBoundBy rdf:type owl:ObjectProperty ;
+              rdfs:domain ndg:PoliticalAction ;
+              rdfs:range ndg:Policy ;
+              rdfs:label "is bound by" .
+
+
+###  https://purl.archive.org/nudging#isBroughtAbout
+ndg:isBroughtAbout rdf:type owl:ObjectProperty ;
+                   rdfs:domain ndg:SocialChange ;
+                   rdfs:range ndg:PoliticalAction ;
+                   rdfs:label "is brought about" .
+
+
+###  https://purl.archive.org/nudging#isCitedIn
+ndg:isCitedIn rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+              rdfs:range ndg:AcademicPaper ;
+              rdfs:label "is cited in" .
+
+
+###  https://purl.archive.org/nudging#isDemonstratedBy
+ndg:isDemonstratedBy rdf:type owl:ObjectProperty ;
+                     rdfs:domain ndg:SocialIssue ;
+                     rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                     rdfs:label "is demonstrated by" .
+
+
+###  https://purl.archive.org/nudging#isDistantFrom
+ndg:isDistantFrom rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ndg:spatialRelation ;
+                  rdfs:label "is distant from"@en .
+
+
+###  https://purl.archive.org/nudging#isImpliedInPaper
+ndg:isImpliedInPaper rdf:type owl:ObjectProperty ;
+                     rdfs:domain ndg:Policy ;
+                     rdfs:range ndg:AcademicPaper ;
+                     rdfs:label "is implied in paper" .
+
+
+###  https://purl.archive.org/nudging#isModeledOn
+ndg:isModeledOn rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn> ;
+                rdfs:domain ndg:EvaluationTask ;
+                rdfs:range ndg:EvaluationModel ;
+                rdfs:label "is modeled on"@en .
+
+
+###  https://purl.archive.org/nudging#isStructuredBy
+ndg:isStructuredBy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn> ;
+                   rdfs:domain ndg:NudgingStrategy ;
+                   rdfs:range ndg:DataDrivenStrategy ;
+                   rdfs:comment "The relation between nudging strategy (e.g.: gamification to reduce the number of people who take the bus without the ticket) and its internal structure (e.g.: on which data is based? which behavior it relies on?, etc)"@en ;
+                   rdfs:label "is structured by"@en .
+
+
+###  https://purl.archive.org/nudging#nudgeBasedRelation
+ndg:nudgeBasedRelation rdf:type owl:ObjectProperty ;
+                       rdfs:label "nudge based relation" .
+
+
+###  https://purl.archive.org/nudging#planOutcome
+ndg:planOutcome rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+                rdfs:range ndg:SocialChange ;
+                rdfs:label "plan outcome" .
+
+
+###  https://purl.archive.org/nudging#produces
+ndg:produces rdf:type owl:ObjectProperty ;
+             rdfs:range ndg:PoliticalAction ;
+             rdfs:label "produces" .
+
+
+###  https://purl.archive.org/nudging#references
+ndg:references rdf:type owl:ObjectProperty ;
+               rdfs:domain <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> ;
+               rdfs:range <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> ;
+               rdfs:label "references" .
+
+
+###  https://purl.archive.org/nudging#reliesOnData
+ndg:reliesOnData rdf:type owl:ObjectProperty ;
+                 rdfs:domain ndg:Methodology ;
+                 rdfs:range ndg:DataCollection ;
+                 rdfs:label "relies on data" .
+
+
+###  https://purl.archive.org/nudging#spatialRelation
+ndg:spatialRelation rdf:type owl:ObjectProperty ;
+                    rdfs:label "spatial relation" .
+
+
+###  https://purl.archive.org/nudging#usesMethodology
+ndg:usesMethodology rdf:type owl:ObjectProperty ;
+                    rdfs:domain ndg:AcademicPaper ;
+                    rdfs:range ndg:Methodology ;
+                    rdfs:label "uses methodology" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://purl.archive.org/nudging#DOI
+ndg:DOI rdf:type owl:DatatypeProperty ;
+        rdfs:domain ndg:AcademicPaper ;
+        rdfs:range xsd:anyURI ;
+        rdfs:label "DOI" .
+
+
+###  https://purl.archive.org/nudging#accidents
+ndg:accidents rdf:type owl:DatatypeProperty ;
+              rdfs:label "accidents"@en .
+
+
+###  https://purl.archive.org/nudging#average
+ndg:average rdf:type owl:DatatypeProperty ;
+            rdfs:label "average" .
+
+
+###  https://purl.archive.org/nudging#busStopNumber
+ndg:busStopNumber rdf:type owl:DatatypeProperty ;
+                  rdfs:label "bus stop number"@en .
+
+
+###  https://purl.archive.org/nudging#distance
+ndg:distance rdf:type owl:DatatypeProperty ;
+             rdfs:label "distance"@en .
+
+
+###  https://purl.archive.org/nudging#plan_assessment
+ndg:plan_assessment rdf:type owl:DatatypeProperty ;
+                    rdfs:label "plan assessment" .
+
+
+###  https://purl.archive.org/nudging#total
+ndg:total rdf:type owl:DatatypeProperty ;
+          rdfs:label "total" .
+
+
+###  https://purl.archive.org/nudging#vehiclesNumber
+ndg:vehiclesNumber rdf:type owl:DatatypeProperty ;
+                   rdfs:label "vehicles number"@en .
+
+
+###  https://purl.archive.org/nudging#year
+ndg:year rdf:type owl:DatatypeProperty ;
+         rdfs:domain ndg:AcademicPaper ;
+         rdfs:label "year" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action> rdf:type owl:Class ;
+                                                               rdfs:label "action" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent> rdf:type owl:Class ;
+                                                                        rdfs:label "collective agent" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent> ;
+                                                                  rdfs:label "community" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> rdf:type owl:Class ;
+                                                                    rdfs:label "description" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType> rdf:type owl:Class ;
+                                                                  rdfs:label "event type" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent> ;
+                                                              rdfs:label "group" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> rdf:type owl:Class ;
+                                                                          rdfs:label "information object" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization> rdf:type owl:Class ;
+                                                                     rdfs:label "organization" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person> rdf:type owl:Class ;
+                                                               rdfs:label "person" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> rdf:type owl:Class ;
+                                                              rdfs:label "place" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> ;
+                                                             rdfs:label "plan" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> rdf:type owl:Class ;
+                                                                  rdfs:label "situation" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent> rdf:type owl:Class ;
+                                                                    rdfs:label "social agent" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory
+<http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> ;
+                                                               rdfs:label "theory" .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class ;
+                                             rdfs:label "time" .
+
+
+###  https://purl.archive.org/nudging#AcademicPaper
+ndg:AcademicPaper rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> ;
+                  rdfs:label "academic paper" .
+
+
+###  https://purl.archive.org/nudging#Author
+ndg:Author rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person> ;
+           rdfs:label "author" .
+
+
+###  https://purl.archive.org/nudging#BusStop
+ndg:BusStop rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+            rdfs:label "bus stop"@en .
+
+
+###  https://purl.archive.org/nudging#Census
+ndg:Census rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+           rdfs:label "area censuaria"@it ,
+                      "census"@en .
+
+
+###  https://purl.archive.org/nudging#City
+ndg:City rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+         rdfs:label "città"@it ,
+                    "city"@en .
+
+
+###  https://purl.archive.org/nudging#Company
+ndg:Company rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization> ;
+            rdfs:label "company"@en .
+
+
+###  https://purl.archive.org/nudging#Country
+ndg:Country rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+            rdfs:label "country"@en ,
+                       "stato"@it .
+
+
+###  https://purl.archive.org/nudging#County
+ndg:County rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+           rdfs:label "county"@en ,
+                      "regione"@it .
+
+
+###  https://purl.archive.org/nudging#DataCollection
+ndg:DataCollection rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> ;
+                   rdfs:label "data collection"@en .
+
+
+###  https://purl.archive.org/nudging#DataDrivenStrategy
+ndg:DataDrivenStrategy rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+                       rdfs:label "data-driven strategy"@en .
+
+
+###  https://purl.archive.org/nudging#Distance
+ndg:Distance rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> ;
+             rdfs:label "distance"@en .
+
+
+###  https://purl.archive.org/nudging#District
+ndg:District rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+             rdfs:label "circoscrizione"@it ,
+                        "district"@en .
+
+
+###  https://purl.archive.org/nudging#EvaluationModel
+ndg:EvaluationModel rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                    owl:disjointWith ndg:NudgingType ;
+                    rdfs:comment "one of the possible evaluation approaches that one can adopt to assess the nudging strategy"@en ;
+                    rdfs:label "evaluation model" .
+
+
+###  https://purl.archive.org/nudging#EvaluationProcess
+ndg:EvaluationProcess rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty ndg:executesEvaluationTask ;
+                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass ndg:EvaluationTask
+                                          ] ;
+                      rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action> ;
+                      owl:disjointWith ndg:Nudge ;
+                      rdfs:comment "the evaluation of the nudging strategies and its impact"@en ;
+                      rdfs:label "evaluation process"@en .
+
+
+###  https://purl.archive.org/nudging#EvaluationTask
+ndg:EvaluationTask rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType> ;
+                   rdfs:label "evaluation task" .
+
+
+###  https://purl.archive.org/nudging#Explanation
+ndg:Explanation rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> ;
+                rdfs:label "explanation"@en .
+
+
+###  https://purl.archive.org/nudging#ForeignMen
+ndg:ForeignMen rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+               rdfs:label "foreign men"@en .
+
+
+###  https://purl.archive.org/nudging#ForeignWomen
+ndg:ForeignWomen rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+                 rdfs:label "foreign women"@en .
+
+
+###  https://purl.archive.org/nudging#ImpactIndicator
+ndg:ImpactIndicator rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> ;
+                    rdfs:label "impact indicator"@en .
+
+
+###  https://purl.archive.org/nudging#InternationalPolicy
+ndg:InternationalPolicy rdf:type owl:Class ;
+                        rdfs:subClassOf ndg:Policy ;
+                        rdfs:label "international policy"@en .
+
+
+###  https://purl.archive.org/nudging#MaleTeenagers
+ndg:MaleTeenagers rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart> ;
+                                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                        owl:onClass [ owl:intersectionOf ( <https://w3id.org/spice/SON/CommunityOntology/Male>
+                                                                           <https://w3id.org/spice/SON/CommunityOntology/Teenager>
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                      ] ;
+                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+                  rdfs:label "male teenagers"@en .
+
+
+###  https://purl.archive.org/nudging#Men
+ndg:Men rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+        rdfs:label "men"@en .
+
+
+###  https://purl.archive.org/nudging#Methodology
+ndg:Methodology rdf:type owl:Class ;
+                rdfs:subClassOf ndg:EvaluationProcess ;
+                rdfs:label "methodology" .
+
+
+###  https://purl.archive.org/nudging#NationalPolicy
+ndg:NationalPolicy rdf:type owl:Class ;
+                   rdfs:subClassOf ndg:Policy ;
+                   rdfs:label "national policy"@en .
+
+
+###  https://purl.archive.org/nudging#NonProfitOrganization
+ndg:NonProfitOrganization rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization> ;
+                          rdfs:label "non-profit organization"@en .
+
+
+###  https://purl.archive.org/nudging#Nudge
+ndg:Nudge rdf:type owl:Class ;
+          rdfs:subClassOf ndg:PoliticalAction ;
+          rdfs:label "nudge"@en .
+
+
+###  https://purl.archive.org/nudging#NudgingStrategy
+ndg:NudgingStrategy rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType> ;
+                    rdfs:label "nudging strategy"@en .
+
+
+###  https://purl.archive.org/nudging#NudgingType
+ndg:NudgingType rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory> ;
+                rdfs:label "nudging type"@en .
+
+
+###  https://purl.archive.org/nudging#Policy
+ndg:Policy rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> ;
+           rdfs:comment "a policy that relies at a higher level than the political intervention and can hinder or foster the intervention itself"@en ;
+           rdfs:label "policy"@en .
+
+
+###  https://purl.archive.org/nudging#PolicyImplication
+ndg:PolicyImplication rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan> ;
+                      rdfs:label "policy implication" .
+
+
+###  https://purl.archive.org/nudging#PoliticalAction
+ndg:PoliticalAction rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( ndg:PoliticalAction
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty ndg:excecutesNudgingStrategy ;
+                                                                 owl:someValuesFrom ndg:NudgingStrategy
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty ndg:designedFrom ;
+                                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass ndg:SocialChange
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action> ;
+                    rdfs:label "political action" .
+
+
+###  https://purl.archive.org/nudging#PublicAdministration
+ndg:PublicAdministration rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization> ;
+                         rdfs:label "public adminstration"@en .
+
+
+###  https://purl.archive.org/nudging#RegionalPolicy
+ndg:RegionalPolicy rdf:type owl:Class ;
+                   rdfs:subClassOf ndg:Policy ;
+                   rdfs:label "regional policy"@en .
+
+
+###  https://purl.archive.org/nudging#SocialChange
+ndg:SocialChange rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( ndg:SocialChange
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.w3.org/2006/time#after> ;
+                                                              owl:someValuesFrom ndg:Nudge
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.w3.org/2006/time#hasTime> ;
+                                                              owl:someValuesFrom <http://www.w3.org/2006/time#TemporalEntity>
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> ;
+                 rdfs:label "social change"@en .
+
+
+###  https://purl.archive.org/nudging#SocialContext
+ndg:SocialContext rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( ndg:SocialContext
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.w3.org/2006/time#hasTime> ;
+                                                               owl:someValuesFrom <http://www.w3.org/2006/time#TemporalEntity>
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent>
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> ;
+                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place>
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> ;
+                  rdfs:label "social context"@en .
+
+
+###  https://purl.archive.org/nudging#SocialIssue
+ndg:SocialIssue rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( ndg:SocialIssue
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://www.w3.org/2006/time#before> ;
+                                                             owl:someValuesFrom ndg:Policy
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://www.w3.org/2006/time#hasTime> ;
+                                                             owl:someValuesFrom <http://www.w3.org/2006/time#TemporalEntity>
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> ;
+                rdfs:label "social issue"@en .
+
+
+###  https://purl.archive.org/nudging#Stakeholder
+ndg:Stakeholder rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent> ;
+                rdfs:label "stakeholder" .
+
+
+###  https://purl.archive.org/nudging#StatisticZone
+ndg:StatisticZone rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+                  rdfs:label "statistic zone"@en ,
+                             "zona statistica"@it .
+
+
+###  https://purl.archive.org/nudging#Street
+ndg:Street rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+           rdfs:label "street"@en .
+
+
+###  https://purl.archive.org/nudging#StructuredData
+ndg:StructuredData rdf:type owl:Class ;
+                   rdfs:subClassOf ndg:DataCollection ;
+                   owl:disjointWith ndg:UnstructuredData ;
+                   rdfs:label "structured data"@en .
+
+
+###  https://purl.archive.org/nudging#Suburb
+ndg:Suburb rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place> ;
+           rdfs:label "suburb"@en .
+
+
+###  https://purl.archive.org/nudging#UnstructuredData
+ndg:UnstructuredData rdf:type owl:Class ;
+                     rdfs:subClassOf ndg:DataCollection ;
+                     rdfs:label "unstructured data"@en .
+
+
+###  https://purl.archive.org/nudging#Women
+ndg:Women rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group> ;
+          rdfs:label "women"@en .
+
+
+###  https://purl.archive.org/nudging#Year
+ndg:Year rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+         rdfs:label "year" .
+
+
+###  https://w3id.org/spice/SON/CommunityOntology/Male
+<https://w3id.org/spice/SON/CommunityOntology/Male> rdf:type owl:Class ;
+                                                    rdfs:label "male" .
+
+
+###  https://w3id.org/spice/SON/CommunityOntology/Teenager
+<https://w3id.org/spice/SON/CommunityOntology/Teenager> rdf:type owl:Class ;
+                                                        rdfs:label "teenager" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://purl.archive.org/nudging#women
+ndg:women rdf:type owl:NamedIndividual ,
+                   ndg:Women ;
+          rdfs:label "women" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ndg:Census
+                ndg:City
+                ndg:Country
+                ndg:County
+                ndg:District
+                ndg:StatisticZone
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ndg:Company
+                ndg:NonProfitOrganization
+                ndg:PublicAdministration
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ndg:ForeignMen
+                ndg:ForeignWomen
+                ndg:Men
+                ndg:Women
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ndg:InternationalPolicy
+                ndg:NationalPolicy
+                ndg:RegionalPolicy
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
